@@ -323,6 +323,48 @@ export const routes: Routes = [
           ),
       },
       {
+        path: 'components/native-select',
+        loadComponent: () =>
+          import(
+            './features/components/base-ui/native-select/native-select.component'
+          ).then((m) => m.NativeSelectComponent),
+      },
+      {
+        path: 'components/navigation-menu',
+        loadComponent: () =>
+          import(
+            './features/components/base-ui/navigation-menu/navigation-menu.component'
+          ).then((m) => m.NavigationMenuComponent),
+      },
+      {
+        path: 'components/pagination',
+        loadComponent: () =>
+          import(
+            './features/components/base-ui/pagination/pagination.component'
+          ).then((m) => m.PaginationComponent),
+      },
+      {
+        path: 'components/popover',
+        loadComponent: () =>
+          import('./features/components/base-ui/popover/popover.component').then(
+            (m) => m.PopoverComponent,
+          ),
+      },
+      {
+        path: 'components/progress',
+        loadComponent: () =>
+          import('./features/components/base-ui/progress/progress.component').then(
+            (m) => m.ProgressComponent,
+          ),
+      },
+      {
+        path: 'components/questionnaire',
+        loadComponent: () =>
+          import(
+            './features/components/base-ui/questionnaire/questionnaire.component'
+          ).then((m) => m.QuestionnaireComponent),
+      },
+      {
         path: 'settings',
         loadComponent: () =>
           import('./features/settings/settings.component').then(
