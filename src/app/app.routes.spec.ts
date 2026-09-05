@@ -131,6 +131,19 @@ describe('app routes — navigation audit', () => {
     }
   })
 
+  it('registers the fifth batch of component routes (item to message)', () => {
+    for (const url of [
+      '/components/item',
+      '/components/kbd',
+      '/components/label',
+      '/components/marker',
+      '/components/menubar',
+      '/components/message',
+    ]) {
+      expect(resolves(url)).toBe(true)
+    }
+  })
+
   it('registers auth, standalone error and in-app error routes', () => {
     for (const url of [
       '/sign-in',

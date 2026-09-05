@@ -281,6 +281,48 @@ export const routes: Routes = [
           ),
       },
       {
+        path: 'components/item',
+        loadComponent: () =>
+          import('./features/components/base-ui/item/item.component').then(
+            (m) => m.ItemComponent,
+          ),
+      },
+      {
+        path: 'components/kbd',
+        loadComponent: () =>
+          import('./features/components/base-ui/kbd/kbd.component').then(
+            (m) => m.KbdComponent,
+          ),
+      },
+      {
+        path: 'components/label',
+        loadComponent: () =>
+          import('./features/components/base-ui/label/label.component').then(
+            (m) => m.LabelComponent,
+          ),
+      },
+      {
+        path: 'components/marker',
+        loadComponent: () =>
+          import('./features/components/base-ui/marker/marker.component').then(
+            (m) => m.MarkerComponent,
+          ),
+      },
+      {
+        path: 'components/menubar',
+        loadComponent: () =>
+          import('./features/components/base-ui/menubar/menubar.component').then(
+            (m) => m.MenubarComponent,
+          ),
+      },
+      {
+        path: 'components/message',
+        loadComponent: () =>
+          import('./features/components/base-ui/message/message.component').then(
+            (m) => m.MessageComponent,
+          ),
+      },
+      {
         path: 'settings',
         loadComponent: () =>
           import('./features/settings/settings.component').then(
