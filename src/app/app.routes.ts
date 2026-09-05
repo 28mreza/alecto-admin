@@ -365,6 +365,62 @@ export const routes: Routes = [
           ).then((m) => m.QuestionnaireComponent),
       },
       {
+        path: 'components/radio-group',
+        loadComponent: () =>
+          import(
+            './features/components/base-ui/radio-group/radio-group.component'
+          ).then((m) => m.RadioGroupComponent),
+      },
+      {
+        path: 'components/resizable',
+        loadComponent: () =>
+          import(
+            './features/components/base-ui/resizable/resizable.component'
+          ).then((m) => m.ResizableComponent),
+      },
+      {
+        path: 'components/scroll-area',
+        loadComponent: () =>
+          import(
+            './features/components/base-ui/scroll-area/scroll-area.component'
+          ).then((m) => m.ScrollAreaComponent),
+      },
+      {
+        path: 'components/select',
+        loadComponent: () =>
+          import('./features/components/base-ui/select/select.component').then(
+            (m) => m.SelectComponent,
+          ),
+      },
+      {
+        path: 'components/separator',
+        loadComponent: () =>
+          import(
+            './features/components/base-ui/separator/separator.component'
+          ).then((m) => m.SeparatorComponent),
+      },
+      {
+        path: 'components/sheet',
+        loadComponent: () =>
+          import('./features/components/base-ui/sheet/sheet.component').then(
+            (m) => m.SheetComponent,
+          ),
+      },
+      {
+        path: 'components/sidebar',
+        loadComponent: () =>
+          import('./features/components/base-ui/sidebar/sidebar.component').then(
+            (m) => m.SidebarComponent,
+          ),
+      },
+      {
+        path: 'components/skeleton',
+        loadComponent: () =>
+          import(
+            './features/components/base-ui/skeleton/skeleton.component'
+          ).then((m) => m.SkeletonComponent),
+      },
+      {
         path: 'settings',
         loadComponent: () =>
           import('./features/settings/settings.component').then(

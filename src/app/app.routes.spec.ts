@@ -157,6 +157,21 @@ describe('app routes — navigation audit', () => {
     }
   })
 
+  it('registers the seventh batch of component routes (radio-group to skeleton)', () => {
+    for (const url of [
+      '/components/radio-group',
+      '/components/resizable',
+      '/components/scroll-area',
+      '/components/select',
+      '/components/separator',
+      '/components/sheet',
+      '/components/sidebar',
+      '/components/skeleton',
+    ]) {
+      expect(resolves(url)).toBe(true)
+    }
+  })
+
   it('registers auth, standalone error and in-app error routes', () => {
     for (const url of [
       '/sign-in',
