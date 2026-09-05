@@ -332,6 +332,42 @@ export const sidebarData: SidebarData = {
               title: 'Skeleton',
               url: '/components/skeleton',
             },
+            {
+              title: 'Sonner',
+              url: '/components/sonner',
+            },
+            {
+              title: 'Spinner',
+              url: '/components/spinner',
+            },
+            {
+              title: 'Switch',
+              url: '/components/switch',
+            },
+            {
+              title: 'Table',
+              url: '/components/table',
+            },
+            {
+              title: 'Tabs',
+              url: '/components/tabs',
+            },
+            {
+              title: 'Textarea',
+              url: '/components/textarea',
+            },
+            {
+              title: 'Toggle',
+              url: '/components/toggle',
+            },
+            {
+              title: 'Toggle Group',
+              url: '/components/toggle-group',
+            },
+            {
+              title: 'Tooltip',
+              url: '/components/tooltip',
+            },
           ],
         },
       ],

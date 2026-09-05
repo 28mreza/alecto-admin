@@ -186,6 +186,24 @@ describe('AppSidebarComponent', () => {
     }
   })
 
+  it('renders the eighth batch of Base UI children (sonner to tooltip)', () => {
+    TestBed.inject(SidebarService).setOpen(true)
+    fixture.detectChanges()
+    for (const title of [
+      'Sonner',
+      'Spinner',
+      'Switch',
+      'Table',
+      'Tabs',
+      'Textarea',
+      'Toggle',
+      'Toggle Group',
+      'Tooltip',
+    ]) {
+      expect(text()).toContain(title)
+    }
+  })
+
   it('renders the Chats badge', () => {
     expect(text()).toContain('3')
   })
