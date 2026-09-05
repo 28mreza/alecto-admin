@@ -1,0 +1,76 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Kbd</h2>
+      <p class="text-muted-foreground">
+        Displays textual keyboard input.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Group</h3>
+          <p hlmCardDescription>Grouped shortcut keys.</p>
+        </div>
+        <div hlmCardContent class="flex flex-col items-center gap-4">
+          <kbd hlmKbdGroup>
+            <kbd hlmKbd>⌘</kbd>
+            <kbd hlmKbd>⇧</kbd>
+            <kbd hlmKbd>⌥</kbd>
+            <kbd hlmKbd>⌃</kbd>
+          </kbd>
+          <kbd hlmKbdGroup>
+            <kbd hlmKbd>Ctrl</kbd>
+            <span>+</span>
+            <kbd hlmKbd>B</kbd>
+          </kbd>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>In Button</h3>
+          <p hlmCardDescription>Keys inside action buttons.</p>
+        </div>
+        <div hlmCardContent class="flex flex-wrap items-center gap-4">
+          <button hlmBtn variant="outline" size="sm" type="button" class="pr-2">
+            Accept
+            <kbd hlmKbd>⏎</kbd>
+          </button>
+          <button hlmBtn variant="outline" size="sm" type="button" class="pr-2">
+            Cancel
+            <kbd hlmKbd>Esc</kbd>
+          </button>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>In Input Group</h3>
+          <p hlmCardDescription>Search field with shortcut hint.</p>
+        </div>
+        <div hlmCardContent>
+          <div hlmInputGroup>
+            <input hlmInputGroupInput placeholder="Search..." aria-label="Search" />
+            <div hlmInputGroupAddon>
+              <ng-icon name="lucideSearch" />
+            </div>
+            <div hlmInputGroupAddon align="inline-end">
+              <kbd hlmKbd>⌘</kbd>
+              <kbd hlmKbd>K</kbd>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>

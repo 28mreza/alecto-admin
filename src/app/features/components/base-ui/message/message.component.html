@@ -1,0 +1,85 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Message</h2>
+      <p class="text-muted-foreground">
+        Chat messages with avatar, bubble, and footer.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Conversation</h3>
+          <p hlmCardDescription>Incoming and outgoing messages.</p>
+        </div>
+        <div hlmCardContent class="flex flex-col gap-6">
+          <div hlmMessage align="end">
+            <div hlmMessageAvatar>
+              <hlm-avatar>
+                <span hlmAvatarFallback>ME</span>
+              </hlm-avatar>
+            </div>
+            <div hlmMessageContent>
+              <div hlmBubble>
+                <div hlmBubbleContent>Deploying to prod real quick.</div>
+              </div>
+            </div>
+          </div>
+
+          <div hlmMessage>
+            <div hlmMessageAvatar>
+              <hlm-avatar>
+                <span hlmAvatarFallback>SP</span>
+              </hlm-avatar>
+            </div>
+            <div hlmMessageContent>
+              <div hlmBubble variant="muted">
+                <div hlmBubbleContent>It&apos;s 4:55 PM. On a Friday.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Group &amp; Footer</h3>
+          <p hlmCardDescription>Grouped bubbles with delivery status.</p>
+        </div>
+        <div hlmCardContent class="flex flex-col gap-6">
+          <div hlmMessage align="end">
+            <div hlmMessageAvatar>
+              <hlm-avatar>
+                <span hlmAvatarFallback>ME</span>
+              </hlm-avatar>
+            </div>
+            <div hlmMessageContent>
+              <div hlmBubbleGroup>
+                <div hlmBubble>
+                  <div hlmBubbleContent>It&apos;s a one-line change.</div>
+                </div>
+              </div>
+              <div hlmMessageFooter>Delivered</div>
+            </div>
+          </div>
+
+          <div hlmMarker role="status">
+            <span hlmMarkerContent class="shimmer">
+              <span class="font-medium">Spartan</span>
+              is typing...
+            </span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>

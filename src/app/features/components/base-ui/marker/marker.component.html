@@ -1,0 +1,65 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Marker</h2>
+      <p class="text-muted-foreground">
+        Inline timeline and status notes.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Basic</h3>
+          <p hlmCardDescription>Icon with content.</p>
+        </div>
+        <div hlmCardContent class="flex flex-col gap-4">
+          <div hlmMarker>
+            <span hlmMarkerIcon>
+              <ng-icon name="lucideGitBranch" />
+            </span>
+            <span hlmMarkerContent>Switched to a new branch</span>
+          </div>
+          <div hlmMarker>
+            <span hlmMarkerIcon>
+              <ng-icon name="lucideSearch" />
+            </span>
+            <span hlmMarkerContent>Explored 4 files</span>
+          </div>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Separator</h3>
+          <p hlmCardDescription>Divider between groups.</p>
+        </div>
+        <div hlmCardContent>
+          <div hlmMarker variant="separator">
+            <span hlmMarkerContent>Conversation compacted</span>
+          </div>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Status</h3>
+          <p hlmCardDescription>Shimmer loading note (no spinner).</p>
+        </div>
+        <div hlmCardContent>
+          <div hlmMarker role="status">
+            <span hlmMarkerContent class="shimmer">Thinking...</span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>

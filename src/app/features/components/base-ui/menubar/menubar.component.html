@@ -1,0 +1,99 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Menubar</h2>
+      <p class="text-muted-foreground">
+        A horizontal bar of dropdown menus.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Basic</h3>
+          <p hlmCardDescription>File menu with shortcut and submenu.</p>
+        </div>
+        <div hlmCardContent>
+          <hlm-menubar>
+            <button type="button" hlmMenubarTrigger [hlmMenubarTrigger]="fileMenu">File</button>
+            <button type="button" hlmMenubarTrigger [hlmMenubarTrigger]="editMenu">Edit</button>
+          </hlm-menubar>
+
+          <ng-template #fileMenu>
+            <div hlmDropdownMenu sideOffset="2">
+              <button hlmDropdownMenuItem type="button">
+                New Tab
+                <span hlmDropdownMenuShortcut>⌘T</span>
+              </button>
+              <button hlmDropdownMenuItem type="button" disabled>New Incognito Window</button>
+              <hr hlmDropdownMenuSeparator />
+              <button hlmDropdownMenuItem type="button">
+                Print
+                <span hlmDropdownMenuShortcut>⌘P</span>
+              </button>
+            </div>
+          </ng-template>
+
+          <ng-template #editMenu>
+            <div hlmDropdownMenu sideOffset="2" class="w-48">
+              <button hlmDropdownMenuItem type="button">
+                Undo
+                <span hlmDropdownMenuShortcut>⌘Z</span>
+              </button>
+              <button hlmDropdownMenuItem type="button">Cut</button>
+              <button hlmDropdownMenuItem type="button">Copy</button>
+              <button hlmDropdownMenuItem type="button">Paste</button>
+            </div>
+          </ng-template>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Checkbox &amp; Radio</h3>
+          <p hlmCardDescription>View toggles and profile picker.</p>
+        </div>
+        <div hlmCardContent>
+          <hlm-menubar>
+            <button type="button" hlmMenubarTrigger [hlmMenubarTrigger]="viewMenu">View</button>
+            <button type="button" hlmMenubarTrigger [hlmMenubarTrigger]="profilesMenu">Profiles</button>
+          </hlm-menubar>
+
+          <ng-template #viewMenu>
+            <div hlmDropdownMenu sideOffset="2">
+              <button hlmDropdownMenuCheckbox type="button">
+                Bookmarks Bar
+                <hlm-dropdown-menu-checkbox-indicator />
+              </button>
+              <button hlmDropdownMenuCheckbox checked type="button">
+                Full URLs
+                <hlm-dropdown-menu-checkbox-indicator />
+              </button>
+            </div>
+          </ng-template>
+
+          <ng-template #profilesMenu>
+            <div hlmDropdownMenu sideOffset="2" class="w-48">
+              <button hlmDropdownMenuRadio type="button">
+                Andy
+                <hlm-dropdown-menu-radio-indicator />
+              </button>
+              <button hlmDropdownMenuRadio checked type="button">
+                Benoit
+                <hlm-dropdown-menu-radio-indicator />
+              </button>
+            </div>
+          </ng-template>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>
