@@ -300,6 +300,38 @@ export const sidebarData: SidebarData = {
               title: 'Questionnaire',
               url: '/components/questionnaire',
             },
+            {
+              title: 'Radio Group',
+              url: '/components/radio-group',
+            },
+            {
+              title: 'Resizable',
+              url: '/components/resizable',
+            },
+            {
+              title: 'Scroll Area',
+              url: '/components/scroll-area',
+            },
+            {
+              title: 'Select',
+              url: '/components/select',
+            },
+            {
+              title: 'Separator',
+              url: '/components/separator',
+            },
+            {
+              title: 'Sheet',
+              url: '/components/sheet',
+            },
+            {
+              title: 'Sidebar',
+              url: '/components/sidebar',
+            },
+            {
+              title: 'Skeleton',
+              url: '/components/skeleton',
+            },
           ],
         },
       ],

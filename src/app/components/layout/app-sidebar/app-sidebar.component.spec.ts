@@ -169,6 +169,23 @@ describe('AppSidebarComponent', () => {
     }
   })
 
+  it('renders the seventh batch of Base UI children (radio-group to skeleton)', () => {
+    TestBed.inject(SidebarService).setOpen(true)
+    fixture.detectChanges()
+    for (const title of [
+      'Radio Group',
+      'Resizable',
+      'Scroll Area',
+      'Select',
+      'Separator',
+      'Sheet',
+      'Sidebar',
+      'Skeleton',
+    ]) {
+      expect(text()).toContain(title)
+    }
+  })
+
   it('renders the Chats badge', () => {
     expect(text()).toContain('3')
   })
