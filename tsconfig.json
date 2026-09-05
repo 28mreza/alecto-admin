@@ -59,7 +59,20 @@
         "./src/app/ui/autocomplete/src/index.ts"
       ],
       "@spartan-ng/helm/breadcrumb": ["./src/app/ui/breadcrumb/src/index.ts"],
-      "@spartan-ng/helm/bubble": ["./src/app/ui/bubble/src/index.ts"]
+      "@spartan-ng/helm/bubble": ["./src/app/ui/bubble/src/index.ts"],
+      "@spartan-ng/helm/button-group": [
+        "./src/app/ui/button-group/src/index.ts"
+      ],
+      "@spartan-ng/helm/carousel": ["./src/app/ui/carousel/src/index.ts"],
+      "@spartan-ng/helm/chart": ["./src/app/ui/chart/src/index.ts"],
+      "@spartan-ng/helm/combobox": ["./src/app/ui/combobox/src/index.ts"],
+      "@spartan-ng/helm/context-menu": [
+        "./src/app/ui/context-menu/src/index.ts"
+      ],
+      "@spartan-ng/helm/drawer": ["./src/app/ui/drawer/src/index.ts"],
+      "@spartan-ng/helm/empty": ["./src/app/ui/empty/src/index.ts"],
+      "@spartan-ng/helm/field": ["./src/app/ui/field/src/index.ts"],
+      "@spartan-ng/helm/hover-card": ["./src/app/ui/hover-card/src/index.ts"]
     }
   },
   "angularCompilerOptions": {
