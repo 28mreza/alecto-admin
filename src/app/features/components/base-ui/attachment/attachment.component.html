@@ -1,0 +1,122 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Attachment</h2>
+      <p class="text-muted-foreground">
+        Displays a file attachment with actions and upload states.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Basic</h3>
+          <p hlmCardDescription>A file row with a remove action.</p>
+        </div>
+        <div hlmCardContent>
+          <div hlmAttachment class="w-full">
+            <div hlmAttachmentMedia>
+              <ng-icon name="lucideFileCode" />
+            </div>
+            <div hlmAttachmentContent>
+              <span hlmAttachmentTitle>message-renderer.tsx</span>
+              <span hlmAttachmentDescription>TypeScript · 12 KB</span>
+            </div>
+            <div hlmAttachmentActions>
+              <button hlmAttachmentAction type="button" aria-label="Remove attachment">
+                <ng-icon name="lucideX" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>States</h3>
+          <p hlmCardDescription>Uploading and error states.</p>
+        </div>
+        <div hlmCardContent class="grid items-start gap-4">
+          <div hlmAttachment state="uploading" class="w-full">
+            <div hlmAttachmentMedia>
+              <ng-icon name="lucideFileText" />
+            </div>
+            <div hlmAttachmentContent>
+              <span hlmAttachmentTitle>sales-dashboard.pdf</span>
+              <span hlmAttachmentDescription>Uploading · 64%</span>
+            </div>
+          </div>
+          <div hlmAttachment state="error" class="w-full">
+            <div hlmAttachmentMedia>
+              <ng-icon name="lucideFileText" />
+            </div>
+            <div hlmAttachmentContent>
+              <span hlmAttachmentTitle>photo.png</span>
+              <span hlmAttachmentDescription>Upload failed · retry</span>
+            </div>
+            <div hlmAttachmentActions>
+              <button hlmAttachmentAction type="button" aria-label="Remove attachment">
+                <ng-icon name="lucideX" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Image</h3>
+          <p hlmCardDescription>Vertical orientation with an image preview.</p>
+        </div>
+        <div hlmCardContent>
+          <div hlmAttachmentGroup>
+            <div hlmAttachment orientation="vertical" class="w-full max-w-48">
+              <div hlmAttachmentMedia variant="image">
+                <img src="/images/shadcn-admin.png" alt="Design preview" />
+              </div>
+              <div hlmAttachmentContent>
+                <span hlmAttachmentTitle>design-preview.png</span>
+                <span hlmAttachmentDescription>PNG · 273 KB</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Sizes</h3>
+          <p hlmCardDescription>Small and extra-small rows.</p>
+        </div>
+        <div hlmCardContent class="grid items-start gap-4">
+          <div hlmAttachment size="sm" class="w-full">
+            <div hlmAttachmentMedia>
+              <ng-icon name="lucideFileText" />
+            </div>
+            <div hlmAttachmentContent>
+              <span hlmAttachmentTitle>notes-sm.txt</span>
+              <span hlmAttachmentDescription>Text · 2 KB</span>
+            </div>
+          </div>
+          <div hlmAttachment size="xs" class="w-full">
+            <div hlmAttachmentMedia>
+              <ng-icon name="lucideFileText" />
+            </div>
+            <div hlmAttachmentContent>
+              <span hlmAttachmentTitle>notes-xs.txt</span>
+              <span hlmAttachmentDescription>Text · 1 KB</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>

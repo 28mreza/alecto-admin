@@ -1,0 +1,79 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Bubble</h2>
+      <p class="text-muted-foreground">
+        Chat-style message bubbles with alignment and style variants.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Conversation</h3>
+          <p hlmCardDescription>Start and end aligned messages.</p>
+        </div>
+        <div hlmCardContent>
+          <div hlmBubbleGroup class="grid gap-2">
+            <div hlmBubble align="end">
+              <div hlmBubbleContent>Hey there! What is up?</div>
+            </div>
+            <div hlmBubble variant="muted">
+              <div hlmBubbleContent>
+                Hey! Want to see what chat bubbles look like?
+              </div>
+            </div>
+            <div hlmBubble align="end">
+              <div hlmBubbleContent>Yes, show me the variants.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Variants</h3>
+          <p hlmCardDescription>Secondary, tinted and outline styles.</p>
+        </div>
+        <div hlmCardContent class="grid gap-2">
+          <div hlmBubble variant="secondary">
+            <div hlmBubbleContent>Secondary bubble style.</div>
+          </div>
+          <div hlmBubble variant="tinted" align="end">
+            <div hlmBubbleContent>Tinted bubble style.</div>
+          </div>
+          <div hlmBubble variant="outline">
+            <div hlmBubbleContent>Outline bubble style.</div>
+          </div>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Reactions</h3>
+          <p hlmCardDescription>A message with reactions.</p>
+        </div>
+        <div hlmCardContent>
+          <div hlmBubble variant="muted">
+            <div hlmBubbleContent>Thanks for the quick review!</div>
+            <div
+              hlmBubbleReactions
+              role="img"
+              aria-label="Reaction: thumbs up"
+            >
+              <ng-icon name="lucideThumbsUp" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>

@@ -1,0 +1,101 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Autocomplete</h2>
+      <p class="text-muted-foreground">
+        An input with filterable suggestions in a popover.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Basic</h3>
+          <p hlmCardDescription>Type to filter the framework list.</p>
+        </div>
+        <div hlmCardContent>
+          <hlm-autocomplete [(search)]="search">
+            <hlm-autocomplete-input placeholder="Search frameworks" />
+            <hlm-autocomplete-content *hlmAutocompletePortal>
+              <hlm-autocomplete-empty>No frameworks found.</hlm-autocomplete-empty>
+              <div hlmAutocompleteList>
+                @for (option of filteredFrameworks(); track option) {
+                  <hlm-autocomplete-item [value]="option">
+                    {{ option }}
+                  </hlm-autocomplete-item>
+                }
+              </div>
+            </hlm-autocomplete-content>
+          </hlm-autocomplete>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Grouped</h3>
+          <p hlmCardDescription>Suggestions grouped under labels.</p>
+        </div>
+        <div hlmCardContent>
+          <hlm-autocomplete [(search)]="groupedSearch">
+            <hlm-autocomplete-input placeholder="Search food" />
+            <hlm-autocomplete-content *hlmAutocompletePortal>
+              <hlm-autocomplete-empty>No food found.</hlm-autocomplete-empty>
+              <div hlmAutocompleteList>
+                <div hlmAutocompleteGroup>
+                  <span hlmAutocompleteLabel>Fruits</span>
+                  @for (fruit of filteredFruits(); track fruit) {
+                    <hlm-autocomplete-item [value]="fruit">
+                      {{ fruit }}
+                    </hlm-autocomplete-item>
+                  }
+                </div>
+                <div hlmAutocompleteSeparator></div>
+                <div hlmAutocompleteGroup>
+                  <span hlmAutocompleteLabel>Vegetables</span>
+                  @for (vegetable of filteredVegetables(); track vegetable) {
+                    <hlm-autocomplete-item [value]="vegetable">
+                      {{ vegetable }}
+                    </hlm-autocomplete-item>
+                  }
+                </div>
+              </div>
+            </hlm-autocomplete-content>
+          </hlm-autocomplete>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>With Clear</h3>
+          <p hlmCardDescription>An input with a clear button.</p>
+        </div>
+        <div hlmCardContent>
+          <hlm-autocomplete [(search)]="clearSearch">
+            <hlm-autocomplete-input
+              placeholder="Search with clear"
+              [showClear]="true"
+            />
+            <hlm-autocomplete-content *hlmAutocompletePortal>
+              <hlm-autocomplete-empty>No frameworks found.</hlm-autocomplete-empty>
+              <div hlmAutocompleteList>
+                @for (option of filteredClear(); track option) {
+                  <hlm-autocomplete-item [value]="option">
+                    {{ option }}
+                  </hlm-autocomplete-item>
+                }
+              </div>
+            </hlm-autocomplete-content>
+          </hlm-autocomplete>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>

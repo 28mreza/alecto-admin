@@ -1,0 +1,86 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Avatar</h2>
+      <p class="text-muted-foreground">
+        An image representation of a user with fallback initials.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Sizes</h3>
+          <p hlmCardDescription>Default, small and large avatars.</p>
+        </div>
+        <div hlmCardContent class="flex items-center gap-4">
+          <hlm-avatar>
+            <img hlmAvatarImage src="/avatars/shadcn.jpg" alt="Muhamad Reza" />
+            <span hlmAvatarFallback>MR</span>
+          </hlm-avatar>
+          <hlm-avatar size="sm">
+            <img hlmAvatarImage src="/avatars/shadcn.jpg" alt="Small avatar" />
+            <span hlmAvatarFallback>SM</span>
+          </hlm-avatar>
+          <hlm-avatar size="lg">
+            <img hlmAvatarImage src="/avatars/shadcn.jpg" alt="Large avatar" />
+            <span hlmAvatarFallback>LG</span>
+          </hlm-avatar>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Badge</h3>
+          <p hlmCardDescription>Status dot and icon badges.</p>
+        </div>
+        <div hlmCardContent class="flex items-center gap-4">
+          <hlm-avatar>
+            <img hlmAvatarImage src="/avatars/shadcn.jpg" alt="Online user" />
+            <span hlmAvatarFallback>ON</span>
+            <hlm-avatar-badge class="bg-emerald-500" />
+          </hlm-avatar>
+          <hlm-avatar>
+            <img hlmAvatarImage src="/avatars/shadcn.jpg" alt="Add user" />
+            <span hlmAvatarFallback>AD</span>
+            <hlm-avatar-badge>
+              <ng-icon name="lucidePlus" />
+            </hlm-avatar-badge>
+          </hlm-avatar>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Group</h3>
+          <p hlmCardDescription>Stacked avatars with an overflow count.</p>
+        </div>
+        <div hlmCardContent>
+          <div hlmAvatarGroup>
+            <hlm-avatar>
+              <img hlmAvatarImage src="/avatars/shadcn.jpg" alt="Member one" />
+              <span hlmAvatarFallback>M1</span>
+            </hlm-avatar>
+            <hlm-avatar>
+              <img hlmAvatarImage src="/avatars/shadcn.jpg" alt="Member two" />
+              <span hlmAvatarFallback>M2</span>
+            </hlm-avatar>
+            <hlm-avatar>
+              <img hlmAvatarImage src="/avatars/shadcn.jpg" alt="Member three" />
+              <span hlmAvatarFallback>M3</span>
+            </hlm-avatar>
+            <hlm-avatar-group-count>+3</hlm-avatar-group-count>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>
