@@ -72,7 +72,11 @@
       "@spartan-ng/helm/drawer": ["./src/app/ui/drawer/src/index.ts"],
       "@spartan-ng/helm/empty": ["./src/app/ui/empty/src/index.ts"],
       "@spartan-ng/helm/field": ["./src/app/ui/field/src/index.ts"],
-      "@spartan-ng/helm/hover-card": ["./src/app/ui/hover-card/src/index.ts"]
+      "@spartan-ng/helm/hover-card": ["./src/app/ui/hover-card/src/index.ts"],
+      "@spartan-ng/helm/item": ["./src/app/ui/item/src/index.ts"],
+      "@spartan-ng/helm/marker": ["./src/app/ui/marker/src/index.ts"],
+      "@spartan-ng/helm/menubar": ["./src/app/ui/menubar/src/index.ts"],
+      "@spartan-ng/helm/message": ["./src/app/ui/message/src/index.ts"]
     }
   },
   "angularCompilerOptions": {
