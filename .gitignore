@@ -44,5 +44,8 @@ __screenshots__/
 .DS_Store
 Thumbs.db
 
+# Worktrees (isolated workspaces)
+.worktrees/
+
 # Documentation
 docs/
