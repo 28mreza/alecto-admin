@@ -1,0 +1,71 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Card</h2>
+      <p class="text-muted-foreground">
+        Displays content in a bordered container with header and footer.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Login</h3>
+          <p hlmCardDescription>Enter your credentials to continue.</p>
+        </div>
+        <div hlmCardContent class="grid gap-4">
+          <div class="grid gap-2">
+            <label hlmLabel for="card-email">Email</label>
+            <input hlmInput id="card-email" type="email" placeholder="m@example.com" />
+          </div>
+          <div class="grid gap-2">
+            <label hlmLabel for="card-password">Password</label>
+            <input hlmInput id="card-password" type="password" placeholder="••••••••" />
+          </div>
+        </div>
+        <div hlmCardFooter class="flex justify-end gap-2">
+          <button hlmBtn variant="outline" type="button">Cancel</button>
+          <button hlmBtn type="button">Sign In</button>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Notifications</h3>
+          <p hlmCardDescription>You have 3 unread messages.</p>
+        </div>
+        <div hlmCardContent class="grid gap-4">
+          <div class="flex items-center gap-4 rounded-md border p-3">
+            <div class="grid gap-1">
+              <p class="text-sm font-medium">Deploy finished</p>
+              <p class="text-muted-foreground text-sm">
+                Production deploy completed in 2 minutes.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 rounded-md border p-3">
+            <div class="grid gap-1">
+              <p class="text-sm font-medium">New comment</p>
+              <p class="text-muted-foreground text-sm">
+                Reza mentioned you in a pull request.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div hlmCardFooter>
+          <button hlmBtn variant="outline" type="button" class="w-full">
+            Mark all as read
+          </button>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>

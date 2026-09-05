@@ -1,0 +1,69 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Button</h2>
+      <p class="text-muted-foreground">
+        Displays a button or a component that looks like a button.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Variants</h3>
+          <p hlmCardDescription>All six button variants.</p>
+        </div>
+        <div hlmCardContent class="flex flex-wrap items-center gap-2">
+          <button hlmBtn type="button">Default</button>
+          <button hlmBtn variant="secondary" type="button">Secondary</button>
+          <button hlmBtn variant="destructive" type="button">Destructive</button>
+          <button hlmBtn variant="outline" type="button">Outline</button>
+          <button hlmBtn variant="ghost" type="button">Ghost</button>
+          <button hlmBtn variant="link" type="button">Link</button>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Sizes</h3>
+          <p hlmCardDescription>Extra small to large, plus icon buttons.</p>
+        </div>
+        <div hlmCardContent class="flex flex-wrap items-center gap-2">
+          <button hlmBtn size="xs" type="button">Extra Small</button>
+          <button hlmBtn size="sm" type="button">Small</button>
+          <button hlmBtn type="button">Default</button>
+          <button hlmBtn size="lg" type="button">Large</button>
+          <button hlmBtn size="icon" type="button" aria-label="Add">
+            <ng-icon name="lucidePlus" />
+          </button>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>With Icon &amp; Disabled</h3>
+          <p hlmCardDescription>Leading/trailing icons and disabled state.</p>
+        </div>
+        <div hlmCardContent class="flex flex-wrap items-center gap-2">
+          <button hlmBtn type="button">
+            <ng-icon name="lucidePlus" />
+            Create
+          </button>
+          <button hlmBtn variant="outline" type="button">
+            Next
+            <ng-icon name="lucideArrowRight" />
+          </button>
+          <button hlmBtn type="button" disabled>Disabled</button>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>

@@ -1,0 +1,67 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Input</h2>
+      <p class="text-muted-foreground">
+        Displays a form input field for text entry.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Basic</h3>
+          <p hlmCardDescription>Placeholder and disabled inputs.</p>
+        </div>
+        <div hlmCardContent class="grid gap-4">
+          <input hlmInput placeholder="Type something..." aria-label="Basic input" />
+          <input hlmInput placeholder="Disabled input" disabled aria-label="Disabled input" />
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>With Label</h3>
+          <p hlmCardDescription>Labelled username field.</p>
+        </div>
+        <div hlmCardContent class="grid gap-2">
+          <label hlmLabel for="input-username">Username</label>
+          <input hlmInput id="input-username" placeholder="mrezadev" />
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Types &amp; Invalid</h3>
+          <p hlmCardDescription>Email, password, and an invalid state.</p>
+        </div>
+        <div hlmCardContent class="grid gap-4">
+          <input hlmInput type="email" placeholder="Email" aria-label="Email input" />
+          <input
+            hlmInput
+            type="password"
+            placeholder="Password"
+            aria-label="Password input"
+          />
+          <div class="grid gap-2">
+            <input
+              hlmInput
+              aria-invalid="true"
+              placeholder="Enter a valid code"
+              aria-label="Invalid input"
+            />
+            <p class="text-destructive text-sm">Code must be 6 digits.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>

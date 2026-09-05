@@ -1,0 +1,97 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Empty</h2>
+      <p class="text-muted-foreground">
+        A placeholder for empty lists, search results, and dropzones.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Basic</h3>
+          <p hlmCardDescription>Icon, title, description, and action.</p>
+        </div>
+        <div hlmCardContent>
+          <hlm-empty>
+            <hlm-empty-header>
+              <hlm-empty-media variant="icon">
+                <ng-icon name="lucideFolderOpen" />
+              </hlm-empty-media>
+              <div hlmEmptyTitle>No projects</div>
+              <div hlmEmptyDescription>
+                Get started by creating your first project.
+              </div>
+            </hlm-empty-header>
+            <hlm-empty-content>
+              <button hlmBtn size="sm" type="button">
+                <ng-icon name="lucidePlus" />
+                New project
+              </button>
+            </hlm-empty-content>
+          </hlm-empty>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Dashed Upload</h3>
+          <p hlmCardDescription>Outlined dropzone style.</p>
+        </div>
+        <div hlmCardContent>
+          <div hlmEmpty class="border border-dashed">
+            <hlm-empty-header>
+              <hlm-empty-media variant="icon">
+                <ng-icon name="lucideFolderOpen" />
+              </hlm-empty-media>
+              <div hlmEmptyTitle>No files uploaded</div>
+              <div hlmEmptyDescription>
+                Drag and drop files here, or browse your computer.
+              </div>
+            </hlm-empty-header>
+            <hlm-empty-content>
+              <button hlmBtn variant="outline" size="sm" type="button">
+                Upload files
+              </button>
+            </hlm-empty-content>
+          </div>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>With Avatar</h3>
+          <p hlmCardDescription>Media slot with an avatar.</p>
+        </div>
+        <div hlmCardContent>
+          <hlm-empty>
+            <hlm-empty-header>
+              <hlm-empty-media>
+                <hlm-avatar>
+                  <img hlmAvatarImage src="/avatars/shadcn.jpg" alt="Team lead" />
+                  <span hlmAvatarFallback>TL</span>
+                </hlm-avatar>
+              </hlm-empty-media>
+              <div hlmEmptyTitle>No team members</div>
+              <div hlmEmptyDescription>
+                Invite your team to collaborate on this workspace.
+              </div>
+            </hlm-empty-header>
+            <hlm-empty-content>
+              <button hlmBtn size="sm" type="button">Invite team</button>
+            </hlm-empty-content>
+          </hlm-empty>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>

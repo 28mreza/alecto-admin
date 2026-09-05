@@ -1,0 +1,62 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Collapsible</h2>
+      <p class="text-muted-foreground">
+        An interactive component that expands and collapses content.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Basic</h3>
+          <p hlmCardDescription>Closed until the trigger is clicked.</p>
+        </div>
+        <div hlmCardContent>
+          <hlm-collapsible class="grid gap-2">
+            <button hlmCollapsibleTrigger hlmBtn variant="outline" type="button">
+              <ng-icon name="lucideChevronsUpDown" />
+              Can I use this in my project?
+            </button>
+            <div hlmCollapsibleContent>
+              <p class="rounded-md border px-4 py-3 text-sm">
+                Yes. Free for personal and commercial use — no attribution
+                required.
+              </p>
+            </div>
+          </hlm-collapsible>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Open by Default</h3>
+          <p hlmCardDescription>Starts expanded via the expanded input.</p>
+        </div>
+        <div hlmCardContent>
+          <hlm-collapsible [expanded]="true" class="grid gap-2">
+            <button hlmCollapsibleTrigger hlmBtn variant="outline" type="button">
+              <ng-icon name="lucideChevronsUpDown" />
+              Shipping details
+            </button>
+            <div hlmCollapsibleContent>
+              <p class="rounded-md border px-4 py-3 text-sm">
+                Orders ship within 2 business days. Tracking is emailed as soon
+                as the label is created.
+              </p>
+            </div>
+          </hlm-collapsible>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>

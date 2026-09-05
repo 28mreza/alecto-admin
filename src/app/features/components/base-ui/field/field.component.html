@@ -1,0 +1,69 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Field</h2>
+      <p class="text-muted-foreground">
+        Combines a label, control, description, and error into one unit.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Basic</h3>
+          <p hlmCardDescription>Label, input, and helper text.</p>
+        </div>
+        <div hlmCardContent>
+          <div hlmField>
+            <label hlmFieldLabel for="field-name">Full name</label>
+            <input hlmInput id="field-name" placeholder="Muhamad Reza" />
+            <p hlmFieldDescription>Shown on your public profile.</p>
+          </div>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Invalid</h3>
+          <p hlmCardDescription>Error message for invalid input.</p>
+        </div>
+        <div hlmCardContent>
+          <div hlmField data-invalid="true">
+            <label hlmFieldLabel for="field-email">Email</label>
+            <input
+              hlmInput
+              id="field-email"
+              type="email"
+              aria-invalid="true"
+              placeholder="m@example.com"
+            />
+            <hlm-field-error forceShow>Enter a valid email address.</hlm-field-error>
+          </div>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Checkbox Row</h3>
+          <p hlmCardDescription>Horizontal field with a checkbox control.</p>
+        </div>
+        <div hlmCardContent>
+          <div hlmField orientation="horizontal">
+            <hlm-checkbox inputId="field-shipping" />
+            <label hlmFieldLabel for="field-shipping">
+              Same as shipping address
+            </label>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>
