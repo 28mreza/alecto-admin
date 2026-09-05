@@ -29,13 +29,16 @@
               <legend hlmQuestionnaireTitle>What should the agent build next?</legend>
               <p hlmQuestionnaireDescription>Choose a direction.</p>
               <div hlmQuestionnaireChoices>
+                <!-- eslint-disable-next-line @angular-eslint/template/label-has-associated-control -- hlmQuestionnaireChoice renders its own brnQuestionnaireChoiceInput internally -->
                 <label hlmQuestionnaireChoice value="tool-calls">
                   <span class="font-medium">Tool call timeline</span>
                   <span hlmQuestionnaireChoiceDescription>Show what the agent ran.</span>
                 </label>
+                <!-- eslint-disable-next-line @angular-eslint/template/label-has-associated-control -- hlmQuestionnaireChoice renders its own brnQuestionnaireChoiceInput internally -->
                 <label hlmQuestionnaireChoice value="approvals">
                   <span class="font-medium">Approval checkpoints</span>
                 </label>
+                <!-- eslint-disable-next-line @angular-eslint/template/label-has-associated-control -- hlmQuestionnaireChoice renders its own brnQuestionnaireChoiceInput internally -->
                 <label hlmQuestionnaireChoice value="handoffs">
                   <span class="font-medium">Sub-agent handoffs</span>
                 </label>
@@ -66,8 +69,11 @@
               <legend hlmQuestionnaireTitle>What should updates include?</legend>
               <p hlmQuestionnaireDescription>Select one, or skip.</p>
               <div hlmQuestionnaireChoices>
+                <!-- eslint-disable-next-line @angular-eslint/template/label-has-associated-control -- hlmQuestionnaireChoice renders its own brnQuestionnaireChoiceInput internally -->
                 <label hlmQuestionnaireChoice value="progress">Progress</label>
+                <!-- eslint-disable-next-line @angular-eslint/template/label-has-associated-control -- hlmQuestionnaireChoice renders its own brnQuestionnaireChoiceInput internally -->
                 <label hlmQuestionnaireChoice value="decisions">Decisions</label>
+                <!-- eslint-disable-next-line @angular-eslint/template/label-has-associated-control -- hlmQuestionnaireChoice renders its own brnQuestionnaireChoiceInput internally -->
                 <label hlmQuestionnaireChoice value="risks">Risks</label>
               </div>
               <p hlmQuestionnaireError></p>
