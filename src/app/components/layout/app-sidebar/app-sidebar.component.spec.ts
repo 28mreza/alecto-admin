@@ -97,6 +97,17 @@ describe('AppSidebarComponent', () => {
     expect(text()).toContain('Aspect Ratio')
   })
 
+  it('renders the second batch of Base UI children', () => {
+    TestBed.inject(SidebarService).setOpen(true)
+    fixture.detectChanges()
+    expect(text()).toContain('Attachment')
+    expect(text()).toContain('Autocomplete')
+    expect(text()).toContain('Avatar')
+    expect(text()).toContain('Badge')
+    expect(text()).toContain('Breadcrumb')
+    expect(text()).toContain('Bubble')
+  })
+
   it('renders the Chats badge', () => {
     expect(text()).toContain('3')
   })

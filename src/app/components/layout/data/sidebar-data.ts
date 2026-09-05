@@ -140,6 +140,30 @@ export const sidebarData: SidebarData = {
               title: 'Aspect Ratio',
               url: '/components/aspect-ratio',
             },
+            {
+              title: 'Attachment',
+              url: '/components/attachment',
+            },
+            {
+              title: 'Autocomplete',
+              url: '/components/autocomplete',
+            },
+            {
+              title: 'Avatar',
+              url: '/components/avatar',
+            },
+            {
+              title: 'Badge',
+              url: '/components/badge',
+            },
+            {
+              title: 'Breadcrumb',
+              url: '/components/breadcrumb',
+            },
+            {
+              title: 'Bubble',
+              url: '/components/bubble',
+            },
           ],
         },
       ],
