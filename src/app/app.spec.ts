@@ -62,12 +62,12 @@ describe('App', () => {
   it('syncs the favicon with the resolved theme', () => {
     const link = document.createElement('link')
     link.setAttribute('rel', 'icon')
-    link.setAttribute('href', '/images/logo-light.png')
+    link.setAttribute('href', '/images/logo-light.webp')
     document.head.appendChild(link)
     try {
       const fixture = TestBed.createComponent(App)
       fixture.detectChanges()
-      expect(link.href).toContain('/images/logo-light.png')
+      expect(link.href).toContain('/images/logo-light.webp')
     } finally {
       link.remove()
     }
