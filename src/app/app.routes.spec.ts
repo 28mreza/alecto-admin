@@ -172,6 +172,22 @@ describe('app routes — navigation audit', () => {
     }
   })
 
+  it('registers the eighth batch of component routes (sonner to tooltip)', () => {
+    for (const url of [
+      '/components/sonner',
+      '/components/spinner',
+      '/components/switch',
+      '/components/table',
+      '/components/tabs',
+      '/components/textarea',
+      '/components/toggle',
+      '/components/toggle-group',
+      '/components/tooltip',
+    ]) {
+      expect(resolves(url)).toBe(true)
+    }
+  })
+
   it('registers auth, standalone error and in-app error routes', () => {
     for (const url of [
       '/sign-in',

@@ -421,6 +421,69 @@ export const routes: Routes = [
           ).then((m) => m.SkeletonComponent),
       },
       {
+        path: 'components/sonner',
+        loadComponent: () =>
+          import('./features/components/base-ui/sonner/sonner.component').then(
+            (m) => m.SonnerComponent,
+          ),
+      },
+      {
+        path: 'components/spinner',
+        loadComponent: () =>
+          import('./features/components/base-ui/spinner/spinner.component').then(
+            (m) => m.SpinnerComponent,
+          ),
+      },
+      {
+        path: 'components/switch',
+        loadComponent: () =>
+          import('./features/components/base-ui/switch/switch.component').then(
+            (m) => m.SwitchComponent,
+          ),
+      },
+      {
+        path: 'components/table',
+        loadComponent: () =>
+          import('./features/components/base-ui/table/table.component').then(
+            (m) => m.TableComponent,
+          ),
+      },
+      {
+        path: 'components/tabs',
+        loadComponent: () =>
+          import('./features/components/base-ui/tabs/tabs.component').then(
+            (m) => m.TabsComponent,
+          ),
+      },
+      {
+        path: 'components/textarea',
+        loadComponent: () =>
+          import(
+            './features/components/base-ui/textarea/textarea.component'
+          ).then((m) => m.TextareaComponent),
+      },
+      {
+        path: 'components/toggle',
+        loadComponent: () =>
+          import('./features/components/base-ui/toggle/toggle.component').then(
+            (m) => m.ToggleComponent,
+          ),
+      },
+      {
+        path: 'components/toggle-group',
+        loadComponent: () =>
+          import(
+            './features/components/base-ui/toggle-group/toggle-group.component'
+          ).then((m) => m.ToggleGroupComponent),
+      },
+      {
+        path: 'components/tooltip',
+        loadComponent: () =>
+          import('./features/components/base-ui/tooltip/tooltip.component').then(
+            (m) => m.TooltipComponent,
+          ),
+      },
+      {
         path: 'settings',
         loadComponent: () =>
           import('./features/settings/settings.component').then(
