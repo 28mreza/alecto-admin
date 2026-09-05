@@ -139,6 +139,21 @@ describe('AppSidebarComponent', () => {
     }
   })
 
+  it('renders the fifth batch of Base UI children (item to message)', () => {
+    TestBed.inject(SidebarService).setOpen(true)
+    fixture.detectChanges()
+    for (const title of [
+      'Item',
+      'Kbd',
+      'Label',
+      'Marker',
+      'Menubar',
+      'Message',
+    ]) {
+      expect(text()).toContain(title)
+    }
+  })
+
   it('renders the Chats badge', () => {
     expect(text()).toContain('3')
   })

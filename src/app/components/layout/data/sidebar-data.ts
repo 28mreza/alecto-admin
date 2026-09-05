@@ -252,6 +252,30 @@ export const sidebarData: SidebarData = {
               title: 'Input',
               url: '/components/input',
             },
+            {
+              title: 'Item',
+              url: '/components/item',
+            },
+            {
+              title: 'Kbd',
+              url: '/components/kbd',
+            },
+            {
+              title: 'Label',
+              url: '/components/label',
+            },
+            {
+              title: 'Marker',
+              url: '/components/marker',
+            },
+            {
+              title: 'Menubar',
+              url: '/components/menubar',
+            },
+            {
+              title: 'Message',
+              url: '/components/message',
+            },
           ],
         },
       ],
