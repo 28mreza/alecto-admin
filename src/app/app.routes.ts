@@ -57,6 +57,13 @@ export const routes: Routes = [
           ),
       },
       {
+        path: 'components/accordion',
+        loadComponent: () =>
+          import('./features/components/base-ui/accordion/accordion.component').then(
+            (m) => m.AccordionComponent,
+          ),
+      },
+      {
         path: 'settings',
         loadComponent: () =>
           import('./features/settings/settings.component').then(

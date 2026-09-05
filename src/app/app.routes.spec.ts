@@ -75,6 +75,10 @@ describe('app routes — navigation audit', () => {
     expect(resolves('/help-center')).toBe(true)
   })
 
+  it('registers the components accordion route', () => {
+    expect(resolves('/components/accordion')).toBe(true)
+  })
+
   it('registers auth, standalone error and in-app error routes', () => {
     for (const url of [
       '/sign-in',
