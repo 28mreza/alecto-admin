@@ -64,6 +64,27 @@ export const routes: Routes = [
           ),
       },
       {
+        path: 'components/alert',
+        loadComponent: () =>
+          import('./features/components/base-ui/alert/alert.component').then(
+            (m) => m.AlertComponent,
+          ),
+      },
+      {
+        path: 'components/alert-dialog',
+        loadComponent: () =>
+          import(
+            './features/components/base-ui/alert-dialog/alert-dialog.component'
+          ).then((m) => m.AlertDialogComponent),
+      },
+      {
+        path: 'components/aspect-ratio',
+        loadComponent: () =>
+          import(
+            './features/components/base-ui/aspect-ratio/aspect-ratio.component'
+          ).then((m) => m.AspectRatioComponent),
+      },
+      {
         path: 'settings',
         loadComponent: () =>
           import('./features/settings/settings.component').then(
