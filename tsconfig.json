@@ -49,7 +49,8 @@
       "@spartan-ng/helm/tabs": ["./src/app/ui/tabs/src/index.ts"],
       "@spartan-ng/helm/textarea": ["./src/app/ui/textarea/src/index.ts"],
       "@spartan-ng/helm/tooltip": ["./src/app/ui/tooltip/src/index.ts"],
-      "@spartan-ng/helm/pagination": ["./src/app/ui/pagination/src/index.ts"]
+      "@spartan-ng/helm/pagination": ["./src/app/ui/pagination/src/index.ts"],
+      "@spartan-ng/helm/accordion": ["./src/app/ui/accordion/src/index.ts"]
     }
   },
   "angularCompilerOptions": {
