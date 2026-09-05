@@ -78,6 +78,17 @@ describe('AppSidebarComponent', () => {
     expect(text()).toContain('Settings')
   })
 
+  it('renders the Components group with Base UI > Accordion', () => {
+    // The sidebar starts collapsed (icon mode), where collapsible children
+    // live inside an unopened dropdown template. Open it so the collapsible
+    // branch (children in DOM, CSS-hidden until expanded) renders.
+    TestBed.inject(SidebarService).setOpen(true)
+    fixture.detectChanges()
+    expect(text()).toContain('Components')
+    expect(text()).toContain('Base UI')
+    expect(text()).toContain('Accordion')
+  })
+
   it('renders the Chats badge', () => {
     expect(text()).toContain('3')
   })

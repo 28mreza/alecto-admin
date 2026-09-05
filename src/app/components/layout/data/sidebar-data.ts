@@ -118,6 +118,21 @@ export const sidebarData: SidebarData = {
       ],
     },
     {
+      title: 'Components',
+      items: [
+        {
+          title: 'Base UI',
+          icon: 'lucideLayers',
+          items: [
+            {
+              title: 'Accordion',
+              url: '/components/accordion',
+            },
+          ],
+        },
+      ],
+    },
+    {
       title: 'Other',
       items: [
         {
