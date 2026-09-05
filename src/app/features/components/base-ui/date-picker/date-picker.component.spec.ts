@@ -30,6 +30,10 @@ describe('DatePickerComponent', () => {
     return (fixture.nativeElement as HTMLElement).textContent ?? ''
   }
 
+  function host(): HTMLElement {
+    return fixture.nativeElement as HTMLElement
+  }
+
   it('renders the page heading', () => {
     expect(text()).toContain('Date Picker')
   })
@@ -38,5 +42,14 @@ describe('DatePickerComponent', () => {
     const content = text()
     expect(content).toContain('Picked:')
     expect(content).toContain('Range:')
+  })
+
+  it('renders both picker triggers', () => {
+    const buttons = [...host().querySelectorAll('button')].map((b) =>
+      b.textContent?.trim()
+    )
+    // Single starts empty so the placeholder shows; range starts prefilled.
+    expect(buttons.some((t) => t?.includes('Pick a date'))).toBe(true)
+    expect(buttons.some((t) => t?.includes('2026'))).toBe(true)
   })
 })

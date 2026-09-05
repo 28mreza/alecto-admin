@@ -22,7 +22,9 @@
           <p hlmCardDescription>Picked date shown below.</p>
         </div>
         <div hlmCardContent class="grid gap-4">
-          <hlm-date-picker [date]="date()" (dateChange)="onDateChange($event)" />
+          <hlm-date-picker [date]="date()" (dateChange)="onDateChange($event)">
+            <hlm-date-picker-trigger>Pick a date</hlm-date-picker-trigger>
+          </hlm-date-picker>
           <p class="text-muted-foreground text-sm">
             Picked: {{ date() | date: 'fullDate' }}
           </p>
@@ -38,7 +40,9 @@
           <hlm-date-range-picker
             [date]="range()"
             (dateChange)="onRangeChange($event)"
-          />
+          >
+            <hlm-date-picker-trigger>Pick a range</hlm-date-picker-trigger>
+          </hlm-date-range-picker>
           <p class="text-muted-foreground text-sm">
             Range: {{ range()[0] | date }} – {{ range()[1] | date }}
           </p>

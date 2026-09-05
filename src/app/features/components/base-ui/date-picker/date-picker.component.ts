@@ -37,7 +37,7 @@ import { ThemeSwitchComponent } from '../../../../components/theme-switch/theme-
   templateUrl: './date-picker.component.html',
 })
 export class DatePickerComponent {
-  protected readonly date = signal<Date | undefined>(new Date())
+  protected readonly date = signal<Date | undefined>(undefined)
   protected readonly range = signal<[Date, Date]>([
     new Date(2026, 8, 1),
     new Date(2026, 8, 5),
