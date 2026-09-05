@@ -41,4 +41,13 @@ describe('AccordionComponent', () => {
     expect(content).toContain('Can I access my account history?')
     expect(content).toContain('Subscription & Billing')
   })
+
+  it('renders borders and dynamic content demos', () => {
+    const content = text()
+    expect(content).toContain('Borders')
+    expect(content).toContain('Is my data secure?')
+    expect(content).toContain('Dynamic content')
+    expect(content).toContain("What's included in my plan?")
+    expect(content).toContain('Show details')
+  })
 })

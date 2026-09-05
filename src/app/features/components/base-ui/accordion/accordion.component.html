@@ -15,11 +15,12 @@
       </p>
     </div>
 
-    <section hlmCard class="max-w-2xl">
-      <div hlmCardHeader>
-        <h3 hlmCardTitle>Basic</h3>
-        <p hlmCardDescription>Single-open accordion with three items.</p>
-      </div>
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Basic</h3>
+          <p hlmCardDescription>Single-open accordion with three items.</p>
+        </div>
       <div hlmCardContent>
         <hlm-accordion>
           <hlm-accordion-item>
@@ -45,7 +46,7 @@
       </div>
     </section>
 
-    <section hlmCard class="max-w-2xl">
+    <section hlmCard>
       <div hlmCardHeader>
         <h3 hlmCardTitle>Multiple</h3>
         <p hlmCardDescription>First item open by default, multiple items can stay open.</p>
@@ -62,7 +63,7 @@
       </div>
     </section>
 
-    <section hlmCard class="max-w-2xl">
+    <section hlmCard>
       <div hlmCardHeader>
         <h3 hlmCardTitle>Disabled</h3>
         <p hlmCardDescription>Premium item is disabled until upgrade.</p>
@@ -91,7 +92,57 @@
       </div>
     </section>
 
-    <section hlmCard class="w-full max-w-2xl">
+    <section hlmCard>
+      <div hlmCardHeader>
+        <h3 hlmCardTitle>Borders</h3>
+        <p hlmCardDescription>Bordered container with divided items.</p>
+      </div>
+      <div hlmCardContent>
+        <hlm-accordion class="rounded-lg border">
+          @for (item of bordersItems; track item.trigger) {
+            <hlm-accordion-item class="border-b px-4 last:border-b-0">
+              <hlm-accordion-trigger>{{ item.trigger }}</hlm-accordion-trigger>
+              <hlm-accordion-content>{{ item.content }}</hlm-accordion-content>
+            </hlm-accordion-item>
+          }
+        </hlm-accordion>
+      </div>
+    </section>
+
+    <section hlmCard>
+      <div hlmCardHeader>
+        <h3 hlmCardTitle>Dynamic content</h3>
+        <p hlmCardDescription>The panel animates as its content changes while open.</p>
+      </div>
+      <div hlmCardContent>
+        <hlm-accordion>
+          <hlm-accordion-item isOpened>
+            <hlm-accordion-trigger>What's included in my plan?</hlm-accordion-trigger>
+            <hlm-accordion-content>
+              <p>Your plan includes analytics, alerts, and email support.</p>
+              @if (showDetails()) {
+                <ul class="mt-2 list-disc pl-4">
+                  <li>Priority support</li>
+                  <li>Custom dashboards</li>
+                  <li>Unlimited team seats</li>
+                </ul>
+              }
+              <button
+                hlmBtn
+                size="sm"
+                variant="outline"
+                class="mt-3"
+                (click)="showDetails.set(!showDetails())"
+              >
+                {{ showDetails() ? 'Hide' : 'Show' }} details
+              </button>
+            </hlm-accordion-content>
+          </hlm-accordion-item>
+        </hlm-accordion>
+      </div>
+    </section>
+
+    <section hlmCard class="w-full">
       <div hlmCardHeader>
         <h3 hlmCardTitle>Subscription &amp; Billing</h3>
         <p hlmCardDescription>Accordion wrapped inside a card.</p>
@@ -107,5 +158,6 @@
         </hlm-accordion>
       </div>
     </section>
+    </div>
   </div>
 </app-main>
