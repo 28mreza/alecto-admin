@@ -1,0 +1,87 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Questionnaire</h2>
+      <p class="text-muted-foreground">
+        A stepped set of questions with progress and actions.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Required Choice</h3>
+          <p hlmCardDescription>Must pick one to continue.</p>
+        </div>
+        <div hlmCardContent>
+          <form hlmQuestionnaire class="mx-auto max-w-md" [items]="items" defaultItem="direction">
+            <div hlmQuestionnaireProgress></div>
+
+            <fieldset hlmQuestionnaireItem name="direction" required>
+              <legend hlmQuestionnaireTitle>What should the agent build next?</legend>
+              <p hlmQuestionnaireDescription>Choose a direction.</p>
+              <div hlmQuestionnaireChoices>
+                <label hlmQuestionnaireChoice value="tool-calls">
+                  <span class="font-medium">Tool call timeline</span>
+                  <span hlmQuestionnaireChoiceDescription>Show what the agent ran.</span>
+                </label>
+                <label hlmQuestionnaireChoice value="approvals">
+                  <span class="font-medium">Approval checkpoints</span>
+                </label>
+                <label hlmQuestionnaireChoice value="handoffs">
+                  <span class="font-medium">Sub-agent handoffs</span>
+                </label>
+              </div>
+              <p hlmQuestionnaireError></p>
+            </fieldset>
+
+            <div hlmQuestionnaireActions>
+              <button hlmQuestionnairePrevious type="button">Previous</button>
+              <button hlmQuestionnaireSkip type="button">Skip</button>
+              <button hlmQuestionnaireNext type="button">Next</button>
+              <button hlmQuestionnaireSubmit type="button">Save plan</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Optional Item</h3>
+          <p hlmCardDescription>May be skipped.</p>
+        </div>
+        <div hlmCardContent>
+          <form hlmQuestionnaire class="mx-auto max-w-md" [items]="items" defaultItem="signals">
+            <div hlmQuestionnaireProgress></div>
+
+            <fieldset hlmQuestionnaireItem name="signals">
+              <legend hlmQuestionnaireTitle>What should updates include?</legend>
+              <p hlmQuestionnaireDescription>Select one, or skip.</p>
+              <div hlmQuestionnaireChoices>
+                <label hlmQuestionnaireChoice value="progress">Progress</label>
+                <label hlmQuestionnaireChoice value="decisions">Decisions</label>
+                <label hlmQuestionnaireChoice value="risks">Risks</label>
+              </div>
+              <p hlmQuestionnaireError></p>
+            </fieldset>
+
+            <div hlmQuestionnaireActions>
+              <button hlmQuestionnairePrevious type="button">Previous</button>
+              <button hlmQuestionnaireSkip type="button">Skip</button>
+              <button hlmQuestionnaireNext type="button">Next</button>
+              <button hlmQuestionnaireSubmit type="button">Save plan</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>

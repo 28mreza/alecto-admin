@@ -1,0 +1,79 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Pagination</h2>
+      <p class="text-muted-foreground">
+        Page navigation with previous, numbered, and next links.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Basic</h3>
+          <p hlmCardDescription>Previous, three pages, next.</p>
+        </div>
+        <div hlmCardContent>
+          <nav hlmPagination aria-label="Basic pagination">
+            <ul hlmPaginationContent>
+              <li hlmPaginationItem>
+                <hlm-pagination-previous />
+              </li>
+              <li hlmPaginationItem>
+                <a hlmPaginationLink>1</a>
+              </li>
+              <li hlmPaginationItem>
+                <a hlmPaginationLink isActive>2</a>
+              </li>
+              <li hlmPaginationItem>
+                <a hlmPaginationLink>3</a>
+              </li>
+              <li hlmPaginationItem>
+                <hlm-pagination-next />
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>With Ellipsis</h3>
+          <p hlmCardDescription>Collapsed middle pages.</p>
+        </div>
+        <div hlmCardContent>
+          <nav hlmPagination aria-label="Ellipsis pagination">
+            <ul hlmPaginationContent>
+              <li hlmPaginationItem>
+                <hlm-pagination-previous />
+              </li>
+              <li hlmPaginationItem>
+                <a hlmPaginationLink isActive>1</a>
+              </li>
+              <li hlmPaginationItem>
+                <a hlmPaginationLink>2</a>
+              </li>
+              <li hlmPaginationItem>
+                <hlm-pagination-ellipsis />
+              </li>
+              <li hlmPaginationItem>
+                <a hlmPaginationLink>10</a>
+              </li>
+              <li hlmPaginationItem>
+                <hlm-pagination-next />
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>

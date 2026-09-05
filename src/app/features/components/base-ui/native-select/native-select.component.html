@@ -1,0 +1,63 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Native Select</h2>
+      <p class="text-muted-foreground">
+        A styled native select element for choosing one option.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Basic</h3>
+          <p hlmCardDescription>Status picker.</p>
+        </div>
+        <div hlmCardContent>
+          <hlm-native-select aria-label="Status">
+            <option hlmNativeSelectOption value="">Select status</option>
+            <option hlmNativeSelectOption value="todo">Todo</option>
+            <option hlmNativeSelectOption value="in-progress">In Progress</option>
+            <option hlmNativeSelectOption value="done">Done</option>
+          </hlm-native-select>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>With Label</h3>
+          <p hlmCardDescription>Labelled small select.</p>
+        </div>
+        <div hlmCardContent class="grid gap-2">
+          <label hlmLabel for="native-select-framework">Framework</label>
+          <hlm-native-select selectId="native-select-framework" size="sm">
+            <option hlmNativeSelectOption value="angular">Angular</option>
+            <option hlmNativeSelectOption value="react">React</option>
+            <option hlmNativeSelectOption value="vue">Vue</option>
+          </hlm-native-select>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Disabled</h3>
+          <p hlmCardDescription>Non-interactive select.</p>
+        </div>
+        <div hlmCardContent>
+          <hlm-native-select disabled aria-label="Disabled select">
+            <option hlmNativeSelectOption value="">Select status</option>
+            <option hlmNativeSelectOption value="todo">Todo</option>
+          </hlm-native-select>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>

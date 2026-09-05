@@ -1,0 +1,35 @@
+import { ChangeDetectionStrategy, Component } from '@angular/core'
+import { HlmCardImports } from '@spartan-ng/helm/card'
+import { HlmProgressImports } from '@spartan-ng/helm/progress'
+import { ConfigDrawerComponent } from '../../../../components/config-drawer/config-drawer.component'
+import { HeaderComponent } from '../../../../components/layout/header/header.component'
+import { MainComponent } from '../../../../components/layout/main/main.component'
+import { ProfileDropdownComponent } from '../../../../components/profile-dropdown/profile-dropdown.component'
+import { RefreshButtonComponent } from '../../../../components/refresh-button/refresh-button.component'
+import { SearchComponent } from '../../../../components/search/search.component'
+import { ThemeSwitchComponent } from '../../../../components/theme-switch/theme-switch.component'
+
+/**
+ * Progress page (`/components/progress`).
+ *
+ * Mirrors https://spartan.ng/components/progress (ringkas, static values):
+ * three fixed bars plus an indeterminate bar.
+ */
+@Component({
+  selector: 'app-progress',
+  standalone: true,
+  imports: [
+    HlmProgressImports,
+    HlmCardImports,
+    HeaderComponent,
+    MainComponent,
+    SearchComponent,
+    RefreshButtonComponent,
+    ThemeSwitchComponent,
+    ConfigDrawerComponent,
+    ProfileDropdownComponent,
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  templateUrl: './progress.component.html',
+})
+export class ProgressComponent {}

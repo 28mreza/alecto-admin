@@ -1,0 +1,66 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Popover</h2>
+      <p class="text-muted-foreground">
+        Floating content opened from a trigger button.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Dimensions Form</h3>
+          <p hlmCardDescription>Labelled inputs inside a popover.</p>
+        </div>
+        <div hlmCardContent>
+          <hlm-popover sideOffset="5">
+            <button hlmPopoverTrigger hlmBtn variant="outline" type="button">Open Popover</button>
+            <hlm-popover-content class="grid w-72 gap-4" *hlmPopoverPortal="let ctx">
+              <div class="space-y-2">
+                <h4 class="leading-none font-medium">Dimensions</h4>
+                <p class="text-muted-foreground text-sm">Set the dimensions for the layer.</p>
+              </div>
+              <div class="grid gap-2">
+                <div class="grid grid-cols-3 items-center gap-4">
+                  <label hlmLabel for="popover-width">Width</label>
+                  <input hlmInput id="popover-width" value="100%" class="col-span-2 h-8" />
+                </div>
+                <div class="grid grid-cols-3 items-center gap-4">
+                  <label hlmLabel for="popover-height">Height</label>
+                  <input hlmInput id="popover-height" value="25px" class="col-span-2 h-8" />
+                </div>
+              </div>
+            </hlm-popover-content>
+          </hlm-popover>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Basic</h3>
+          <p hlmCardDescription>Title plus description.</p>
+        </div>
+        <div hlmCardContent>
+          <hlm-popover sideOffset="5">
+            <button hlmPopoverTrigger hlmBtn variant="outline" type="button">Details</button>
+            <hlm-popover-content *hlmPopoverPortal="let ctx">
+              <div hlmPopoverHeader>
+                <span hlmPopoverTitle>About this workspace</span>
+                <p hlmPopoverDescription>Created for the Base UI showcase.</p>
+              </div>
+            </hlm-popover-content>
+          </hlm-popover>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>

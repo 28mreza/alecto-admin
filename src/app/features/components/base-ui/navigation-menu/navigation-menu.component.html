@@ -1,0 +1,85 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Navigation Menu</h2>
+      <p class="text-muted-foreground">
+        A horizontal menu with dropdown content.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Basic</h3>
+          <p hlmCardDescription>Getting started dropdown.</p>
+        </div>
+        <div hlmCardContent>
+          <nav hlmNavigationMenu>
+            <ul hlmNavigationMenuList>
+              <li hlmNavigationMenuItem>
+                <button hlmNavigationMenuTrigger type="button">Getting started</button>
+                <hlm-navigation-menu-content *hlmNavigationMenuPortal>
+                  <ul class="w-80">
+                    <li>
+                      <a hlmNavigationMenuLink routerLink="/components/accordion">
+                        <span class="flex flex-col gap-1 text-sm">
+                          <span class="leading-none font-medium">Introduction</span>
+                          <span class="text-muted-foreground line-clamp-2">Re-usable components built with Tailwind CSS.</span>
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a hlmNavigationMenuLink routerLink="/components/input">
+                        <span class="flex flex-col gap-1 text-sm">
+                          <span class="leading-none font-medium">Installation</span>
+                          <span class="text-muted-foreground line-clamp-2">How to install dependencies and structure your app.</span>
+                        </span>
+                      </a>
+                    </li>
+                  </ul>
+                </hlm-navigation-menu-content>
+              </li>
+              <li hlmNavigationMenuItem>
+                <a hlmNavigationMenuLink routerLink="/components/card">Docs</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>With Icon</h3>
+          <p hlmCardDescription>Task status links with icons.</p>
+        </div>
+        <div hlmCardContent>
+          <nav hlmNavigationMenu>
+            <ul hlmNavigationMenuList>
+              <li hlmNavigationMenuItem>
+                <button hlmNavigationMenuTrigger type="button">Tasks</button>
+                <hlm-navigation-menu-content *hlmNavigationMenuPortal>
+                  <ul>
+                    <li>
+                      <a hlmNavigationMenuLink routerLink="/tasks">
+                        <ng-icon name="lucideInfo" />
+                        Backlog
+                      </a>
+                    </li>
+                  </ul>
+                </hlm-navigation-menu-content>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>
