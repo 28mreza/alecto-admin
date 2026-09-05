@@ -85,6 +85,48 @@ export const routes: Routes = [
           ).then((m) => m.AspectRatioComponent),
       },
       {
+        path: 'components/attachment',
+        loadComponent: () =>
+          import(
+            './features/components/base-ui/attachment/attachment.component'
+          ).then((m) => m.AttachmentComponent),
+      },
+      {
+        path: 'components/autocomplete',
+        loadComponent: () =>
+          import(
+            './features/components/base-ui/autocomplete/autocomplete.component'
+          ).then((m) => m.AutocompleteComponent),
+      },
+      {
+        path: 'components/avatar',
+        loadComponent: () =>
+          import('./features/components/base-ui/avatar/avatar.component').then(
+            (m) => m.AvatarComponent,
+          ),
+      },
+      {
+        path: 'components/badge',
+        loadComponent: () =>
+          import('./features/components/base-ui/badge/badge.component').then(
+            (m) => m.BadgeComponent,
+          ),
+      },
+      {
+        path: 'components/breadcrumb',
+        loadComponent: () =>
+          import(
+            './features/components/base-ui/breadcrumb/breadcrumb.component'
+          ).then((m) => m.BreadcrumbComponent),
+      },
+      {
+        path: 'components/bubble',
+        loadComponent: () =>
+          import('./features/components/base-ui/bubble/bubble.component').then(
+            (m) => m.BubbleComponent,
+          ),
+      },
+      {
         path: 'settings',
         loadComponent: () =>
           import('./features/settings/settings.component').then(

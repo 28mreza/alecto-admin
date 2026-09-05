@@ -89,6 +89,19 @@ describe('app routes — navigation audit', () => {
     }
   })
 
+  it('registers the attachment, autocomplete, avatar, badge, breadcrumb and bubble routes', () => {
+    for (const url of [
+      '/components/attachment',
+      '/components/autocomplete',
+      '/components/avatar',
+      '/components/badge',
+      '/components/breadcrumb',
+      '/components/bubble',
+    ]) {
+      expect(resolves(url)).toBe(true)
+    }
+  })
+
   it('registers auth, standalone error and in-app error routes', () => {
     for (const url of [
       '/sign-in',
