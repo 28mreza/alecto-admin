@@ -1,0 +1,61 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Skeleton</h2>
+      <p class="text-muted-foreground">
+        Placeholder loading states.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Profile</h3>
+          <p hlmCardDescription>Avatar with text lines.</p>
+        </div>
+        <div hlmCardContent class="grid gap-6">
+          <div class="flex items-center gap-4">
+            <hlm-skeleton class="size-12 rounded-full" />
+            <div class="space-y-2">
+              <hlm-skeleton class="h-4 w-[250px]" />
+              <hlm-skeleton class="h-4 w-[200px]" />
+            </div>
+          </div>
+          <div class="flex w-full max-w-xs flex-col gap-2">
+            <hlm-skeleton class="h-4 w-full" />
+            <hlm-skeleton class="h-4 w-full" />
+            <hlm-skeleton class="h-4 w-3/4" />
+          </div>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Form &amp; Card</h3>
+          <p hlmCardDescription>Loading form and media card.</p>
+        </div>
+        <div hlmCardContent class="grid gap-6">
+          <div class="flex w-full max-w-xs flex-col gap-7">
+            <div class="flex flex-col gap-3">
+              <hlm-skeleton class="h-4 w-20" />
+              <hlm-skeleton class="h-8 w-full" />
+            </div>
+            <hlm-skeleton class="h-8 w-24" />
+          </div>
+          <div class="w-full max-w-xs space-y-2">
+            <hlm-skeleton class="aspect-video w-full" />
+            <hlm-skeleton class="h-4 w-2/3" />
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>

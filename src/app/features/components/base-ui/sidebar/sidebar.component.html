@@ -1,0 +1,84 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Sidebar</h2>
+      <p class="text-muted-foreground">
+        A static preview of sidebar menu parts.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Mini Menu</h3>
+          <p hlmCardDescription>Header, three items, one active.</p>
+        </div>
+        <div hlmCardContent>
+          <div class="bg-sidebar text-sidebar-foreground w-64 rounded-lg border">
+            <div hlmSidebarHeader>
+              <span class="px-2 text-sm font-semibold">Alecto Admin</span>
+            </div>
+            <div hlmSidebarContent>
+              <ul hlmSidebarMenu>
+                <li hlmSidebarMenuItem>
+                  <button hlmSidebarMenuButton isActive type="button">
+                    <ng-icon name="lucideHome" />
+                    <span>Dashboard</span>
+                  </button>
+                </li>
+                <li hlmSidebarMenuItem>
+                  <button hlmSidebarMenuButton type="button">
+                    <ng-icon name="lucideFileText" />
+                    <span>Tasks</span>
+                  </button>
+                </li>
+                <li hlmSidebarMenuItem>
+                  <button hlmSidebarMenuButton type="button">
+                    <ng-icon name="lucideSettings" />
+                    <span>Settings</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>With Badge</h3>
+          <p hlmCardDescription>Menu item with a count badge.</p>
+        </div>
+        <div hlmCardContent>
+          <div class="bg-sidebar text-sidebar-foreground w-64 rounded-lg border">
+            <div hlmSidebarContent>
+              <ul hlmSidebarMenu>
+                <li hlmSidebarMenuItem>
+                  <button hlmSidebarMenuButton type="button">
+                    <ng-icon name="lucideFileText" />
+                    <span>Chats</span>
+                  </button>
+                  <span hlmSidebarMenuBadge>3</span>
+                </li>
+                <li hlmSidebarMenuItem>
+                  <button hlmSidebarMenuButton type="button">
+                    <ng-icon name="lucideSettings" />
+                    <span>Settings</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>

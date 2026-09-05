@@ -1,0 +1,74 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Select</h2>
+      <p class="text-muted-foreground">
+        A dropdown picker with search-free option list.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Basic</h3>
+          <p hlmCardDescription>Fruit picker.</p>
+        </div>
+        <div hlmCardContent>
+          <hlm-select [itemToString]="itemToString">
+            <hlm-select-trigger class="w-56">
+              <hlm-select-value placeholder="Select a fruit" />
+            </hlm-select-trigger>
+            <hlm-select-content *hlmSelectPortal>
+              <hlm-select-group>
+                <hlm-select-label>Fruits</hlm-select-label>
+                @for (item of fruits; track item.value) {
+                  <hlm-select-item [value]="item.value">{{ item.label }}</hlm-select-item>
+                }
+              </hlm-select-group>
+            </hlm-select-content>
+          </hlm-select>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Labelled &amp; Disabled</h3>
+          <p hlmCardDescription>Label association plus a disabled state.</p>
+        </div>
+        <div hlmCardContent class="grid gap-6">
+          <div class="grid gap-2">
+            <label hlmLabel for="select-framework">Framework</label>
+            <hlm-select>
+              <hlm-select-trigger id="select-framework" class="w-56">
+                <hlm-select-value placeholder="Select a framework" />
+              </hlm-select-trigger>
+              <hlm-select-content *hlmSelectPortal>
+                <hlm-select-item value="angular">Angular</hlm-select-item>
+                <hlm-select-item value="react">React</hlm-select-item>
+                <hlm-select-item value="vue">Vue</hlm-select-item>
+              </hlm-select-content>
+            </hlm-select>
+          </div>
+          <div class="grid gap-2">
+            <hlm-select disabled>
+              <hlm-select-trigger class="w-56">
+                <hlm-select-value placeholder="Disabled select" />
+              </hlm-select-trigger>
+              <hlm-select-content *hlmSelectPortal>
+                <hlm-select-item value="one">One</hlm-select-item>
+              </hlm-select-content>
+            </hlm-select>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>

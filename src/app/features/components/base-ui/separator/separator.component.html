@@ -1,0 +1,53 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Separator</h2>
+      <p class="text-muted-foreground">
+        A visual divider between content sections.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Horizontal</h3>
+          <p hlmCardDescription>Divider between stacked blocks.</p>
+        </div>
+        <div hlmCardContent>
+          <div class="flex max-w-sm flex-col gap-4 text-sm">
+            <div class="flex flex-col gap-1.5">
+              <div class="leading-none font-medium">spartan/ui</div>
+              <div class="text-muted-foreground">An open-source UI component library.</div>
+            </div>
+            <hlm-separator />
+            <div>A set of beautifully designed components that you can customize, extend, and build on.</div>
+          </div>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Vertical</h3>
+          <p hlmCardDescription>Inline dividers in a row.</p>
+        </div>
+        <div hlmCardContent>
+          <div class="flex h-5 items-center gap-4 text-sm">
+            <div>Blog</div>
+            <hlm-separator orientation="vertical" />
+            <div>Docs</div>
+            <hlm-separator orientation="vertical" />
+            <div>Source</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>

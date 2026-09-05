@@ -1,0 +1,88 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Sheet</h2>
+      <p class="text-muted-foreground">
+        A sliding panel from any screen edge.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Sides</h3>
+          <p hlmCardDescription>Left and right sheets.</p>
+        </div>
+        <div hlmCardContent class="flex flex-wrap gap-4">
+          <hlm-sheet side="left">
+            <button hlmSheetTrigger hlmBtn variant="outline" type="button">Open Left</button>
+            <hlm-sheet-content *hlmSheetPortal="let ctx">
+              <div hlmSheetHeader>
+                <h3 hlmSheetTitle>Left Sheet</h3>
+                <p hlmSheetDescription>Slides in from the left edge.</p>
+              </div>
+              <div hlmSheetFooter>
+                <button hlmSheetClose hlmBtn type="button">Close</button>
+              </div>
+            </hlm-sheet-content>
+          </hlm-sheet>
+
+          <hlm-sheet side="right">
+            <button hlmSheetTrigger hlmBtn variant="outline" type="button">Open Right</button>
+            <hlm-sheet-content *hlmSheetPortal="let ctx">
+              <div hlmSheetHeader>
+                <h3 hlmSheetTitle>Right Sheet</h3>
+                <p hlmSheetDescription>Slides in from the right edge.</p>
+              </div>
+              <div hlmSheetFooter>
+                <button hlmSheetClose hlmBtn type="button">Close</button>
+              </div>
+            </hlm-sheet-content>
+          </hlm-sheet>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Top &amp; Bottom</h3>
+          <p hlmCardDescription>Sheets from vertical edges.</p>
+        </div>
+        <div hlmCardContent class="flex flex-wrap gap-4">
+          <hlm-sheet side="top">
+            <button hlmSheetTrigger hlmBtn variant="outline" type="button">Open Top</button>
+            <hlm-sheet-content *hlmSheetPortal="let ctx">
+              <div hlmSheetHeader>
+                <h3 hlmSheetTitle>Top Sheet</h3>
+                <p hlmSheetDescription>Slides down from the top edge.</p>
+              </div>
+              <div hlmSheetFooter>
+                <button hlmSheetClose hlmBtn type="button">Close</button>
+              </div>
+            </hlm-sheet-content>
+          </hlm-sheet>
+
+          <hlm-sheet side="bottom">
+            <button hlmSheetTrigger hlmBtn variant="outline" type="button">Open Bottom</button>
+            <hlm-sheet-content *hlmSheetPortal="let ctx">
+              <div hlmSheetHeader>
+                <h3 hlmSheetTitle>Bottom Sheet</h3>
+                <p hlmSheetDescription>Slides up from the bottom edge.</p>
+              </div>
+              <div hlmSheetFooter>
+                <button hlmSheetClose hlmBtn type="button">Close</button>
+              </div>
+            </hlm-sheet-content>
+          </hlm-sheet>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>
