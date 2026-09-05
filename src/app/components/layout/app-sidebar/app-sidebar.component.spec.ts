@@ -89,6 +89,14 @@ describe('AppSidebarComponent', () => {
     expect(text()).toContain('Accordion')
   })
 
+  it('renders the new Base UI children', () => {
+    TestBed.inject(SidebarService).setOpen(true)
+    fixture.detectChanges()
+    expect(text()).toContain('Alert')
+    expect(text()).toContain('Alert Dialog')
+    expect(text()).toContain('Aspect Ratio')
+  })
+
   it('renders the Chats badge', () => {
     expect(text()).toContain('3')
   })

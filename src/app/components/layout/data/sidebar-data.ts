@@ -128,6 +128,18 @@ export const sidebarData: SidebarData = {
               title: 'Accordion',
               url: '/components/accordion',
             },
+            {
+              title: 'Alert',
+              url: '/components/alert',
+            },
+            {
+              title: 'Alert Dialog',
+              url: '/components/alert-dialog',
+            },
+            {
+              title: 'Aspect Ratio',
+              url: '/components/aspect-ratio',
+            },
           ],
         },
       ],
