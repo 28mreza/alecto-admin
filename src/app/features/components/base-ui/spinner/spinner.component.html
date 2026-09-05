@@ -1,0 +1,49 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Spinner</h2>
+      <p class="text-muted-foreground">
+        A loading indicator.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Sizes</h3>
+          <p hlmCardDescription>Scale via text size.</p>
+        </div>
+        <div hlmCardContent class="flex items-center gap-6">
+          <hlm-spinner class="text-xs" />
+          <hlm-spinner class="text-base" />
+          <hlm-spinner class="text-2xl" />
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>In Button</h3>
+          <p hlmCardDescription>Loading action state.</p>
+        </div>
+        <div hlmCardContent class="flex flex-wrap items-center gap-4">
+          <button hlmBtn size="sm" type="button" disabled>
+            <hlm-spinner />
+            Loading...
+          </button>
+          <button hlmBtn variant="outline" size="sm" type="button" disabled>
+            <hlm-spinner />
+            Please wait
+          </button>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>

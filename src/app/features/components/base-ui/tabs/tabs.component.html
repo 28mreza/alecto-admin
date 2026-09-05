@@ -1,0 +1,75 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Tabs</h2>
+      <p class="text-muted-foreground">
+        Layered panels, one visible at a time.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Account</h3>
+          <p hlmCardDescription>Account and password panels.</p>
+        </div>
+        <div hlmCardContent>
+          <div hlmTabs tab="account" class="w-full max-w-sm">
+            <div hlmTabsList class="grid w-full grid-cols-2">
+              <button hlmTabsTrigger="'account'" type="button">Account</button>
+              <button hlmTabsTrigger="'password'" type="button">Password</button>
+            </div>
+            <div hlmTabsContent="'account'" class="grid gap-4 py-4">
+              <div class="grid gap-2">
+                <label hlmLabel for="tabs-name">Name</label>
+                <input hlmInput id="tabs-name" value="Pedro Duarte" />
+              </div>
+              <div class="grid gap-2">
+                <label hlmLabel for="tabs-username">Username</label>
+                <input hlmInput id="tabs-username" value="@peduarte" />
+              </div>
+              <button hlmBtn type="button" class="w-fit">Save changes</button>
+            </div>
+            <div hlmTabsContent="'password'" class="grid gap-4 py-4">
+              <div class="grid gap-2">
+                <label hlmLabel for="tabs-current">Current password</label>
+                <input hlmInput id="tabs-current" type="password" />
+              </div>
+              <div class="grid gap-2">
+                <label hlmLabel for="tabs-new">New password</label>
+                <input hlmInput id="tabs-new" type="password" />
+              </div>
+              <button hlmBtn type="button" class="w-fit">Save password</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Disabled Trigger</h3>
+          <p hlmCardDescription>One tab unavailable.</p>
+        </div>
+        <div hlmCardContent>
+          <div hlmTabs tab="overview" class="w-full max-w-sm">
+            <div hlmTabsList class="grid w-full grid-cols-2">
+              <button hlmTabsTrigger="'overview'" type="button">Overview</button>
+              <button hlmTabsTrigger="'reports'" type="button" disabled>Reports</button>
+            </div>
+            <div hlmTabsContent="'overview'" class="py-4 text-sm">
+              Workspace overview lives here.
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>

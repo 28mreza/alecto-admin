@@ -1,0 +1,44 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Tooltip</h2>
+      <p class="text-muted-foreground">
+        Info popup on hover or focus.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Positions</h3>
+          <p hlmCardDescription>Tooltip on four sides.</p>
+        </div>
+        <div hlmCardContent class="flex flex-wrap gap-4">
+          <button hlmBtn variant="outline" type="button" hlmTooltip="Top tooltip" position="top">Top</button>
+          <button hlmBtn variant="outline" type="button" hlmTooltip="Right tooltip" position="right">Right</button>
+          <button hlmBtn variant="outline" type="button" hlmTooltip="Bottom tooltip" position="bottom">Bottom</button>
+          <button hlmBtn variant="outline" type="button" hlmTooltip="Left tooltip" position="left">Left</button>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Delay &amp; Disabled</h3>
+          <p hlmCardDescription>Slow appearance and suppressed tooltip.</p>
+        </div>
+        <div hlmCardContent class="flex flex-wrap gap-4">
+          <button hlmBtn variant="outline" type="button" hlmTooltip="Slow tooltip" [showDelay]="800">Delay</button>
+          <button hlmBtn variant="outline" type="button" hlmTooltip="Never shown" [tooltipDisabled]="true">Disabled</button>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>
