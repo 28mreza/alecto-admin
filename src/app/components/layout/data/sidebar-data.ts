@@ -276,6 +276,30 @@ export const sidebarData: SidebarData = {
               title: 'Message',
               url: '/components/message',
             },
+            {
+              title: 'Native Select',
+              url: '/components/native-select',
+            },
+            {
+              title: 'Navigation Menu',
+              url: '/components/navigation-menu',
+            },
+            {
+              title: 'Pagination',
+              url: '/components/pagination',
+            },
+            {
+              title: 'Popover',
+              url: '/components/popover',
+            },
+            {
+              title: 'Progress',
+              url: '/components/progress',
+            },
+            {
+              title: 'Questionnaire',
+              url: '/components/questionnaire',
+            },
           ],
         },
       ],

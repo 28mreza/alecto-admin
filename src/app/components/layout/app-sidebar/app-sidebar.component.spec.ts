@@ -154,6 +154,21 @@ describe('AppSidebarComponent', () => {
     }
   })
 
+  it('renders the sixth batch of Base UI children (native-select to questionnaire)', () => {
+    TestBed.inject(SidebarService).setOpen(true)
+    fixture.detectChanges()
+    for (const title of [
+      'Native Select',
+      'Navigation Menu',
+      'Pagination',
+      'Popover',
+      'Progress',
+      'Questionnaire',
+    ]) {
+      expect(text()).toContain(title)
+    }
+  })
+
   it('renders the Chats badge', () => {
     expect(text()).toContain('3')
   })
