@@ -1,0 +1,116 @@
+<app-header>
+  <app-top-nav [links]="topNavLinks" className="me-auto" />
+  <app-search />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="mb-2 flex items-center justify-between space-y-2">
+    <h1 class="text-2xl font-bold tracking-tight">Dashboard</h1>
+    <div class="flex items-center space-x-2">
+      <button hlmBtn type="button">Download</button>
+    </div>
+  </div>
+  <hlm-tabs tab="overview" class="space-y-4">
+    <div class="w-full overflow-x-auto pb-2">
+      <hlm-tabs-list>
+        <button hlmTabsTrigger="overview" type="button">Overview</button>
+        <button hlmTabsTrigger="analytics" type="button">Analytics</button>
+        <button hlmTabsTrigger="reports" type="button" disabled>Reports</button>
+        <button hlmTabsTrigger="notifications" type="button" disabled>
+          Notifications
+        </button>
+      </hlm-tabs-list>
+    </div>
+    <div hlmTabsContent="overview" class="space-y-4">
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <section hlmCard>
+          <div
+            hlmCardHeader
+            class="flex flex-row items-center justify-between space-y-0 pb-2"
+          >
+            <h3 hlmCardTitle class="text-sm font-medium">Total Revenue</h3>
+            <ng-icon
+              name="lucideDollarSign"
+              class="text-muted-foreground h-4 w-4"
+            />
+          </div>
+          <div hlmCardContent>
+            <div class="text-2xl font-bold">$45,231.89</div>
+            <p class="text-muted-foreground text-xs">+20.1% from last month</p>
+          </div>
+        </section>
+        <section hlmCard>
+          <div
+            hlmCardHeader
+            class="flex flex-row items-center justify-between space-y-0 pb-2"
+          >
+            <h3 hlmCardTitle class="text-sm font-medium">Subscriptions</h3>
+            <ng-icon name="lucideUsers" class="text-muted-foreground h-4 w-4" />
+          </div>
+          <div hlmCardContent>
+            <div class="text-2xl font-bold">+2350</div>
+            <p class="text-muted-foreground text-xs">+180.1% from last month</p>
+          </div>
+        </section>
+        <section hlmCard>
+          <div
+            hlmCardHeader
+            class="flex flex-row items-center justify-between space-y-0 pb-2"
+          >
+            <h3 hlmCardTitle class="text-sm font-medium">Sales</h3>
+            <ng-icon
+              name="lucideCreditCard"
+              class="text-muted-foreground h-4 w-4"
+            />
+          </div>
+          <div hlmCardContent>
+            <div class="text-2xl font-bold">+12,234</div>
+            <p class="text-muted-foreground text-xs">+19% from last month</p>
+          </div>
+        </section>
+        <section hlmCard>
+          <div
+            hlmCardHeader
+            class="flex flex-row items-center justify-between space-y-0 pb-2"
+          >
+            <h3 hlmCardTitle class="text-sm font-medium">Active Now</h3>
+            <ng-icon
+              name="lucideActivity"
+              class="text-muted-foreground h-4 w-4"
+            />
+          </div>
+          <div hlmCardContent>
+            <div class="text-2xl font-bold">+573</div>
+            <p class="text-muted-foreground text-xs">+201 since last hour</p>
+          </div>
+        </section>
+      </div>
+      <div class="grid grid-cols-1 gap-4 lg:grid-cols-7">
+        <section hlmCard class="col-span-1 lg:col-span-4">
+          <div hlmCardHeader>
+            <h3 hlmCardTitle>Overview</h3>
+          </div>
+          <div hlmCardContent class="ps-2">
+            <app-overview-chart />
+          </div>
+        </section>
+        <section hlmCard class="col-span-1 lg:col-span-3">
+          <div hlmCardHeader>
+            <h3 hlmCardTitle>Recent Sales</h3>
+            <p hlmCardDescription>You made 265 sales this month.</p>
+          </div>
+          <div hlmCardContent>
+            <app-recent-sales />
+          </div>
+        </section>
+      </div>
+    </div>
+    <div hlmTabsContent="analytics" class="space-y-4">
+      <app-dashboard-analytics />
+    </div>
+  </hlm-tabs>
+</app-main>

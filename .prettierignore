@@ -1,0 +1,7 @@
+# Build output, dependencies and generated/vendor code are not format-checked.
+dist/
+node_modules/
+.angular/
+
+# Spartan/cli-generated UI primitives — do not hand-edit or reformat.
+src/app/ui/**
