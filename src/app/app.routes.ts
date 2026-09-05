@@ -127,6 +127,160 @@ export const routes: Routes = [
           ),
       },
       {
+        path: 'components/button',
+        loadComponent: () =>
+          import('./features/components/base-ui/button/button.component').then(
+            (m) => m.ButtonComponent,
+          ),
+      },
+      {
+        path: 'components/button-group',
+        loadComponent: () =>
+          import(
+            './features/components/base-ui/button-group/button-group.component'
+          ).then((m) => m.ButtonGroupComponent),
+      },
+      {
+        path: 'components/calendar',
+        loadComponent: () =>
+          import(
+            './features/components/base-ui/calendar/calendar.component'
+          ).then((m) => m.CalendarComponent),
+      },
+      {
+        path: 'components/card',
+        loadComponent: () =>
+          import('./features/components/base-ui/card/card.component').then(
+            (m) => m.CardComponent,
+          ),
+      },
+      {
+        path: 'components/carousel',
+        loadComponent: () =>
+          import(
+            './features/components/base-ui/carousel/carousel.component'
+          ).then((m) => m.CarouselComponent),
+      },
+      {
+        path: 'components/chart',
+        loadComponent: () =>
+          import('./features/components/base-ui/chart/chart.component').then(
+            (m) => m.ChartComponent,
+          ),
+      },
+      {
+        path: 'components/checkbox',
+        loadComponent: () =>
+          import(
+            './features/components/base-ui/checkbox/checkbox.component'
+          ).then((m) => m.CheckboxComponent),
+      },
+      {
+        path: 'components/collapsible',
+        loadComponent: () =>
+          import(
+            './features/components/base-ui/collapsible/collapsible.component'
+          ).then((m) => m.CollapsibleComponent),
+      },
+      {
+        path: 'components/combobox',
+        loadComponent: () =>
+          import(
+            './features/components/base-ui/combobox/combobox.component'
+          ).then((m) => m.ComboboxComponent),
+      },
+      {
+        path: 'components/command',
+        loadComponent: () =>
+          import(
+            './features/components/base-ui/command/command.component'
+          ).then((m) => m.CommandComponent),
+      },
+      {
+        path: 'components/context-menu',
+        loadComponent: () =>
+          import(
+            './features/components/base-ui/context-menu/context-menu.component'
+          ).then((m) => m.ContextMenuComponent),
+      },
+      {
+        path: 'components/data-table',
+        loadComponent: () =>
+          import(
+            './features/components/base-ui/data-table/data-table.component'
+          ).then((m) => m.DataTableComponent),
+      },
+      {
+        path: 'components/date-picker',
+        loadComponent: () =>
+          import(
+            './features/components/base-ui/date-picker/date-picker.component'
+          ).then((m) => m.DatePickerComponent),
+      },
+      {
+        path: 'components/dialog',
+        loadComponent: () =>
+          import('./features/components/base-ui/dialog/dialog.component').then(
+            (m) => m.DialogComponent,
+          ),
+      },
+      {
+        path: 'components/drawer',
+        loadComponent: () =>
+          import('./features/components/base-ui/drawer/drawer.component').then(
+            (m) => m.DrawerComponent,
+          ),
+      },
+      {
+        path: 'components/dropdown-menu',
+        loadComponent: () =>
+          import(
+            './features/components/base-ui/dropdown-menu/dropdown-menu.component'
+          ).then((m) => m.DropdownMenuComponent),
+      },
+      {
+        path: 'components/empty',
+        loadComponent: () =>
+          import('./features/components/base-ui/empty/empty.component').then(
+            (m) => m.EmptyComponent,
+          ),
+      },
+      {
+        path: 'components/field',
+        loadComponent: () =>
+          import('./features/components/base-ui/field/field.component').then(
+            (m) => m.FieldComponent,
+          ),
+      },
+      {
+        path: 'components/hover-card',
+        loadComponent: () =>
+          import(
+            './features/components/base-ui/hover-card/hover-card.component'
+          ).then((m) => m.HoverCardComponent),
+      },
+      {
+        path: 'components/input-group',
+        loadComponent: () =>
+          import(
+            './features/components/base-ui/input-group/input-group.component'
+          ).then((m) => m.InputGroupComponent),
+      },
+      {
+        path: 'components/input-otp',
+        loadComponent: () =>
+          import(
+            './features/components/base-ui/input-otp/input-otp.component'
+          ).then((m) => m.InputOtpComponent),
+      },
+      {
+        path: 'components/input',
+        loadComponent: () =>
+          import('./features/components/base-ui/input/input.component').then(
+            (m) => m.InputComponent,
+          ),
+      },
+      {
         path: 'settings',
         loadComponent: () =>
           import('./features/settings/settings.component').then(

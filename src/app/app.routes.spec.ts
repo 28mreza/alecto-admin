@@ -102,6 +102,35 @@ describe('app routes — navigation audit', () => {
     }
   })
 
+  it('registers the fourth batch of component routes', () => {
+    for (const url of [
+      '/components/button',
+      '/components/button-group',
+      '/components/calendar',
+      '/components/card',
+      '/components/carousel',
+      '/components/chart',
+      '/components/checkbox',
+      '/components/collapsible',
+      '/components/combobox',
+      '/components/command',
+      '/components/context-menu',
+      '/components/data-table',
+      '/components/date-picker',
+      '/components/dialog',
+      '/components/drawer',
+      '/components/dropdown-menu',
+      '/components/empty',
+      '/components/field',
+      '/components/hover-card',
+      '/components/input-group',
+      '/components/input-otp',
+      '/components/input',
+    ]) {
+      expect(resolves(url)).toBe(true)
+    }
+  })
+
   it('registers auth, standalone error and in-app error routes', () => {
     for (const url of [
       '/sign-in',
