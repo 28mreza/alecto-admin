@@ -19,7 +19,7 @@ import { ThemeSwitchComponent } from '../../../../components/theme-switch/theme-
  * positioning would break page layout).
  */
 @Component({
-  selector: 'app-sidebar',
+  selector: 'app-sidebar-demo',
   standalone: true,
   imports: [
     HlmSidebarImports,
@@ -37,4 +37,4 @@ import { ThemeSwitchComponent } from '../../../../components/theme-switch/theme-
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './sidebar.component.html',
 })
-export class SidebarComponent {}
+export class SidebarDemoComponent {}

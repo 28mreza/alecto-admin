@@ -410,7 +410,7 @@ export const routes: Routes = [
         path: 'components/sidebar',
         loadComponent: () =>
           import('./features/components/base-ui/sidebar/sidebar.component').then(
-            (m) => m.SidebarComponent,
+            (m) => m.SidebarDemoComponent,
           ),
       },
       {
