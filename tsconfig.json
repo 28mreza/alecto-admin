@@ -76,7 +76,17 @@
       "@spartan-ng/helm/item": ["./src/app/ui/item/src/index.ts"],
       "@spartan-ng/helm/marker": ["./src/app/ui/marker/src/index.ts"],
       "@spartan-ng/helm/menubar": ["./src/app/ui/menubar/src/index.ts"],
-      "@spartan-ng/helm/message": ["./src/app/ui/message/src/index.ts"]
+      "@spartan-ng/helm/message": ["./src/app/ui/message/src/index.ts"],
+      "@spartan-ng/helm/native-select": [
+        "./src/app/ui/native-select/src/index.ts"
+      ],
+      "@spartan-ng/helm/navigation-menu": [
+        "./src/app/ui/navigation-menu/src/index.ts"
+      ],
+      "@spartan-ng/helm/progress": ["./src/app/ui/progress/src/index.ts"],
+      "@spartan-ng/helm/questionnaire": [
+        "./src/app/ui/questionnaire/src/index.ts"
+      ]
     }
   },
   "angularCompilerOptions": {
