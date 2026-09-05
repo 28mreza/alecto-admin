@@ -1,0 +1,164 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Data Table</h2>
+      <p class="text-muted-foreground">
+        A TanStack table with sorting, filtering, and pagination.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Basic</h3>
+          <p hlmCardDescription>Plain table, five rows.</p>
+        </div>
+        <div hlmCardContent>
+          <table hlmTable>
+            <thead hlmTHead>
+              @for (headerGroup of basicTable.getHeaderGroups(); track headerGroup.id) {
+                <tr hlmTr>
+                  @for (header of headerGroup.headers; track header.id) {
+                    <th hlmTh>
+                      <ng-container
+                        *flexRender="
+                          header.column.columnDef.header;
+                          props: header.getContext();
+                          let template
+                        "
+                      >
+                        <div [innerHTML]="template"></div>
+                      </ng-container>
+                    </th>
+                  }
+                </tr>
+              }
+            </thead>
+            <tbody hlmTBody>
+              @for (row of basicTable.getRowModel().rows; track row.id) {
+                <tr hlmTr>
+                  @for (cell of row.getAllCells(); track $index) {
+                    <td hlmTd>
+                      <ng-container
+                        *flexRender="
+                          cell.column.columnDef.cell;
+                          props: cell.getContext();
+                          let template
+                        "
+                      >
+                        <div [innerHTML]="template"></div>
+                      </ng-container>
+                    </td>
+                  }
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Filter, Sort &amp; Paginate</h3>
+          <p hlmCardDescription>
+            Filter by email, toggle name sorting, flip pages.
+          </p>
+        </div>
+        <div hlmCardContent class="grid gap-4">
+          <div class="flex flex-wrap items-center gap-2">
+            <input
+              hlmInput
+              placeholder="Filter emails..."
+              aria-label="Filter emails"
+              class="max-w-xs"
+              (input)="setEmailFilter($event)"
+            />
+            <button
+              hlmBtn
+              variant="outline"
+              size="sm"
+              type="button"
+              (click)="table.getColumn('name')?.toggleSorting()"
+            >
+              Toggle name sort ({{ table.getColumn('name')?.getIsSorted() ?? 'unsorted' }})
+            </button>
+          </div>
+          <table hlmTable>
+            <thead hlmTHead>
+              @for (headerGroup of table.getHeaderGroups(); track headerGroup.id) {
+                <tr hlmTr>
+                  @for (header of headerGroup.headers; track header.id) {
+                    <th hlmTh>
+                      <ng-container
+                        *flexRender="
+                          header.column.columnDef.header;
+                          props: header.getContext();
+                          let template
+                        "
+                      >
+                        <div [innerHTML]="template"></div>
+                      </ng-container>
+                    </th>
+                  }
+                </tr>
+              }
+            </thead>
+            <tbody hlmTBody>
+              @for (row of table.getRowModel().rows; track row.id) {
+                <tr hlmTr>
+                  @for (cell of row.getAllCells(); track $index) {
+                    <td hlmTd>
+                      <ng-container
+                        *flexRender="
+                          cell.column.columnDef.cell;
+                          props: cell.getContext();
+                          let template
+                        "
+                      >
+                        <div [innerHTML]="template"></div>
+                      </ng-container>
+                    </td>
+                  }
+                </tr>
+              }
+            </tbody>
+          </table>
+          <div class="flex items-center justify-end gap-2">
+            <p class="text-muted-foreground text-sm">
+              Page {{ pagination().pageIndex + 1 }} of
+              {{ table.getPageCount() }}
+            </p>
+            <button
+              hlmBtn
+              variant="outline"
+              size="sm"
+              type="button"
+              [disabled]="!table.getCanPreviousPage()"
+              (click)="table.previousPage()"
+            >
+              Previous
+            </button>
+            <button
+              hlmBtn
+              variant="outline"
+              size="sm"
+              type="button"
+              [disabled]="!table.getCanNextPage()"
+              (click)="table.nextPage()"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>

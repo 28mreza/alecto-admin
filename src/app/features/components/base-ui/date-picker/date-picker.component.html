@@ -1,0 +1,49 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Date Picker</h2>
+      <p class="text-muted-foreground">
+        A popover calendar for picking single dates and ranges.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Basic</h3>
+          <p hlmCardDescription>Picked date shown below.</p>
+        </div>
+        <div hlmCardContent class="grid gap-4">
+          <hlm-date-picker [date]="date()" (dateChange)="onDateChange($event)" />
+          <p class="text-muted-foreground text-sm">
+            Picked: {{ date() | date: 'fullDate' }}
+          </p>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Range</h3>
+          <p hlmCardDescription>Pick a start and end date.</p>
+        </div>
+        <div hlmCardContent class="grid gap-4">
+          <hlm-date-range-picker
+            [date]="range()"
+            (dateChange)="onRangeChange($event)"
+          />
+          <p class="text-muted-foreground text-sm">
+            Range: {{ range()[0] | date }} – {{ range()[1] | date }}
+          </p>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>
