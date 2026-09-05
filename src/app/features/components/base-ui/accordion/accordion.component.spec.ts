@@ -1,0 +1,44 @@
+import { type ComponentFixture, TestBed } from '@angular/core/testing'
+import { provideRouter } from '@angular/router'
+import { vi } from 'vitest'
+import { AccordionComponent } from './accordion.component'
+
+describe('AccordionComponent', () => {
+  let fixture: ComponentFixture<AccordionComponent>
+
+  beforeEach(async () => {
+    // ThemeSwitch (via ThemeService) needs matchMedia, which jsdom lacks —
+    // same stub as dashboard/chats page specs.
+    Object.defineProperty(window, 'matchMedia', {
+      writable: true,
+      value: (query: string) => ({
+        matches: false,
+        media: query,
+        addEventListener: vi.fn(),
+        removeEventListener: vi.fn(),
+      }),
+    })
+    await TestBed.configureTestingModule({
+      imports: [AccordionComponent],
+      providers: [provideRouter([])],
+    }).compileComponents()
+    fixture = TestBed.createComponent(AccordionComponent)
+    fixture.detectChanges()
+  })
+
+  function text(): string {
+    return (fixture.nativeElement as HTMLElement).textContent ?? ''
+  }
+
+  it('renders the page heading', () => {
+    expect(text()).toContain('Accordion')
+  })
+
+  it('renders basic, multiple, disabled and card demos', () => {
+    const content = text()
+    expect(content).toContain('What are your shipping options?')
+    expect(content).toContain('Notification Settings')
+    expect(content).toContain('Can I access my account history?')
+    expect(content).toContain('Subscription & Billing')
+  })
+})

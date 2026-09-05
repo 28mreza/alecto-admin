@@ -1,0 +1,111 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Accordion</h2>
+      <p class="text-muted-foreground">
+        A vertically stacked set of interactive headings that each reveal a section of content.
+      </p>
+    </div>
+
+    <section hlmCard class="max-w-2xl">
+      <div hlmCardHeader>
+        <h3 hlmCardTitle>Basic</h3>
+        <p hlmCardDescription>Single-open accordion with three items.</p>
+      </div>
+      <div hlmCardContent>
+        <hlm-accordion>
+          <hlm-accordion-item>
+            <hlm-accordion-trigger>What are your shipping options?</hlm-accordion-trigger>
+            <hlm-accordion-content>
+              We offer standard (5-7 days), express (2-3 days), and overnight shipping. Free
+              shipping on international orders.
+            </hlm-accordion-content>
+          </hlm-accordion-item>
+          <hlm-accordion-item>
+            <hlm-accordion-trigger>What is your return policy?</hlm-accordion-trigger>
+            <hlm-accordion-content>
+              Returns accepted within 30 days. Items must be unused and in original packaging.
+            </hlm-accordion-content>
+          </hlm-accordion-item>
+          <hlm-accordion-item>
+            <hlm-accordion-trigger>How can I contact customer support?</hlm-accordion-trigger>
+            <hlm-accordion-content>
+              Reach us via email, live chat, or phone. We respond within 24 hours during business days.
+            </hlm-accordion-content>
+          </hlm-accordion-item>
+        </hlm-accordion>
+      </div>
+    </section>
+
+    <section hlmCard class="max-w-2xl">
+      <div hlmCardHeader>
+        <h3 hlmCardTitle>Multiple</h3>
+        <p hlmCardDescription>First item open by default, multiple items can stay open.</p>
+      </div>
+      <div hlmCardContent>
+        <hlm-accordion type="multiple">
+          @for (item of multipleItems; track item.trigger; let i = $index) {
+            <hlm-accordion-item [isOpened]="i === 0">
+              <hlm-accordion-trigger>{{ item.trigger }}</hlm-accordion-trigger>
+              <hlm-accordion-content>{{ item.content }}</hlm-accordion-content>
+            </hlm-accordion-item>
+          }
+        </hlm-accordion>
+      </div>
+    </section>
+
+    <section hlmCard class="max-w-2xl">
+      <div hlmCardHeader>
+        <h3 hlmCardTitle>Disabled</h3>
+        <p hlmCardDescription>Premium item is disabled until upgrade.</p>
+      </div>
+      <div hlmCardContent>
+        <hlm-accordion>
+          <hlm-accordion-item>
+            <hlm-accordion-trigger>Can I access my account history?</hlm-accordion-trigger>
+            <hlm-accordion-content>
+              Yes, view transactions, plan changes, and support tickets in your dashboard.
+            </hlm-accordion-content>
+          </hlm-accordion-item>
+          <hlm-accordion-item disabled>
+            <hlm-accordion-trigger>Premium feature information</hlm-accordion-trigger>
+            <hlm-accordion-content>
+              Upgrade your plan to access this content.
+            </hlm-accordion-content>
+          </hlm-accordion-item>
+          <hlm-accordion-item>
+            <hlm-accordion-trigger>How do I update my email address?</hlm-accordion-trigger>
+            <hlm-accordion-content>
+              Update it in account settings and confirm via the verification email.
+            </hlm-accordion-content>
+          </hlm-accordion-item>
+        </hlm-accordion>
+      </div>
+    </section>
+
+    <section hlmCard class="w-full max-w-2xl">
+      <div hlmCardHeader>
+        <h3 hlmCardTitle>Subscription &amp; Billing</h3>
+        <p hlmCardDescription>Accordion wrapped inside a card.</p>
+      </div>
+      <div hlmCardContent>
+        <hlm-accordion>
+          @for (item of cardItems; track item.trigger) {
+            <hlm-accordion-item>
+              <hlm-accordion-trigger>{{ item.trigger }}</hlm-accordion-trigger>
+              <hlm-accordion-content>{{ item.content }}</hlm-accordion-content>
+            </hlm-accordion-item>
+          }
+        </hlm-accordion>
+      </div>
+    </section>
+  </div>
+</app-main>
