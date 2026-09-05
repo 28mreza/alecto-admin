@@ -50,17 +50,19 @@ import { type User } from '../types'
           (hlmDropdownMenuOpened)="menuOpen.set(true)"
           (hlmDropdownMenuClosed)="menuOpen.set(false)"
         >
-          <hlm-avatar class="h-8 w-8 rounded-lg">
+          <hlm-avatar class="h-8 w-8 shrink-0 rounded-lg">
             <img hlmAvatarImage [src]="user().avatar" [alt]="user().name" />
             <span hlmAvatarFallback class="rounded-lg">{{ initials() }}</span>
           </hlm-avatar>
-          <div class="grid flex-1 text-start text-sm leading-tight">
+          <div
+            class="grid flex-1 text-start text-sm leading-tight group-data-[collapsible=icon]:hidden"
+          >
             <span class="truncate font-semibold">{{ user().name }}</span>
             <span class="truncate text-xs">{{ user().email }}</span>
           </div>
           <ng-icon
             name="lucideChevronsUpDown"
-            class="ms-auto size-4 shrink-0"
+            class="ms-auto size-4 shrink-0 group-data-[collapsible=icon]:hidden"
           />
         </button>
 

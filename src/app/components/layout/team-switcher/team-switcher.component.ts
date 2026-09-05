@@ -37,7 +37,7 @@ import { type Team } from '../types'
           (hlmDropdownMenuClosed)="menuOpen.set(false)"
         >
           <div
-            class="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center overflow-hidden rounded-sm"
+            class="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 shrink-0 items-center justify-center overflow-hidden rounded-sm"
           >
             @if (isImageLogo(activeTeam().logo)) {
               <img
@@ -49,13 +49,15 @@ import { type Team } from '../types'
               <ng-icon [name]="activeTeam().logo" class="size-4" />
             }
           </div>
-          <div class="grid flex-1 text-start text-sm leading-tight">
+          <div
+            class="grid flex-1 text-start text-sm leading-tight group-data-[collapsible=icon]:hidden"
+          >
             <span class="truncate font-semibold">{{ activeTeam().name }}</span>
             <span class="truncate text-xs">{{ activeTeam().plan }}</span>
           </div>
           <ng-icon
             name="lucideChevronsUpDown"
-            class="ms-auto size-4 shrink-0"
+            class="ms-auto size-4 shrink-0 group-data-[collapsible=icon]:hidden"
           />
         </button>
 
