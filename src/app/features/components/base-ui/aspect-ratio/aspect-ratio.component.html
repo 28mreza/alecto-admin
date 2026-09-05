@@ -1,0 +1,71 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Aspect Ratio</h2>
+      <p class="text-muted-foreground">
+        Displays content within a desired ratio.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Landscape</h3>
+          <p hlmCardDescription>A 16 / 9 ratio, great for previews.</p>
+        </div>
+        <div hlmCardContent>
+          <div [hlmAspectRatio]="16 / 9" class="w-full overflow-hidden">
+            <img
+              ngSrc="/images/dashboard-light.png"
+              fill
+              alt="Dashboard preview"
+              class="rounded-lg object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Square</h3>
+          <p hlmCardDescription>A 1 / 1 ratio, great for thumbnails.</p>
+        </div>
+        <div hlmCardContent>
+          <div [hlmAspectRatio]="1 / 1" class="w-full max-w-48 overflow-hidden">
+            <img
+              ngSrc="/images/shadcn-admin.png"
+              fill
+              alt="Admin thumbnail"
+              class="rounded-lg object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Portrait</h3>
+          <p hlmCardDescription>A 9 / 16 ratio, great for covers.</p>
+        </div>
+        <div hlmCardContent>
+          <div [hlmAspectRatio]="9 / 16" class="w-full max-w-40 overflow-hidden">
+            <img
+              ngSrc="/images/dashboard-dark.png"
+              fill
+              alt="Dashboard cover"
+              class="rounded-lg object-cover"
+            />
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>
