@@ -53,7 +53,13 @@
       "@spartan-ng/helm/accordion": ["./src/app/ui/accordion/src/index.ts"],
       "@spartan-ng/helm/aspect-ratio": [
         "./src/app/ui/aspect-ratio/src/index.ts"
-      ]
+      ],
+      "@spartan-ng/helm/attachment": ["./src/app/ui/attachment/src/index.ts"],
+      "@spartan-ng/helm/autocomplete": [
+        "./src/app/ui/autocomplete/src/index.ts"
+      ],
+      "@spartan-ng/helm/breadcrumb": ["./src/app/ui/breadcrumb/src/index.ts"],
+      "@spartan-ng/helm/bubble": ["./src/app/ui/bubble/src/index.ts"]
     }
   },
   "angularCompilerOptions": {
