@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 import { NgIcon, provideIcons } from '@ng-icons/core';
-import { lucideChevronDown, lucideChevronUp } from '@ng-icons/lucide';
+import { lucideChevronDown } from '@ng-icons/lucide';
 import { BrnAccordionImports } from '@spartan-ng/brain/accordion';
 import { hlm } from '@spartan-ng/helm/utils';
 import type { ClassValue } from 'clsx';
@@ -8,21 +8,21 @@ import type { ClassValue } from 'clsx';
 @Component({
 	selector: 'hlm-accordion-trigger',
 	imports: [BrnAccordionImports, NgIcon],
-	providers: [provideIcons({ lucideChevronDown, lucideChevronUp })],
+	providers: [provideIcons({ lucideChevronDown })],
 	changeDetection: ChangeDetectionStrategy.OnPush,
 	template: `
 		<h3 brnAccordionHeader class="flex">
 			<button brnAccordionTrigger data-slot="accordion-trigger" [class]="_computedTriggerClass()">
 				<ng-content />
+				<!-- Single chevron rotated via group-data (NOT display-toggled):
+					ng-icon's unlayered :host display:inline-block beats Tailwind v4's
+					layered hidden utility, so show/hide classes on ng-icon never apply.
+					rotate is untouched by ng-icon styles, same pattern as the sidebar
+					nav-group chevron. -->
 				<ng-icon
 					name="lucideChevronDown"
 					data-slot="accordion-trigger-icon"
-					class="pointer-events-none shrink-0 group-aria-expanded/accordion-trigger:hidden"
-				/>
-				<ng-icon
-					name="lucideChevronUp"
-					data-slot="accordion-trigger-icon"
-					class="pointer-events-none shrink-0 group-aria-expanded/accordion-trigger:inline group-aria-[expanded=false]/accordion-trigger:hidden"
+					class="pointer-events-none shrink-0 transition-transform duration-200 group-data-[state=open]/accordion-trigger:rotate-180"
 				/>
 			</button>
 		</h3>
