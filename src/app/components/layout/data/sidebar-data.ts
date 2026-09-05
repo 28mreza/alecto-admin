@@ -164,6 +164,94 @@ export const sidebarData: SidebarData = {
               title: 'Bubble',
               url: '/components/bubble',
             },
+            {
+              title: 'Button',
+              url: '/components/button',
+            },
+            {
+              title: 'Button Group',
+              url: '/components/button-group',
+            },
+            {
+              title: 'Calendar',
+              url: '/components/calendar',
+            },
+            {
+              title: 'Card',
+              url: '/components/card',
+            },
+            {
+              title: 'Carousel',
+              url: '/components/carousel',
+            },
+            {
+              title: 'Chart',
+              url: '/components/chart',
+            },
+            {
+              title: 'Checkbox',
+              url: '/components/checkbox',
+            },
+            {
+              title: 'Collapsible',
+              url: '/components/collapsible',
+            },
+            {
+              title: 'Combobox',
+              url: '/components/combobox',
+            },
+            {
+              title: 'Command',
+              url: '/components/command',
+            },
+            {
+              title: 'Context Menu',
+              url: '/components/context-menu',
+            },
+            {
+              title: 'Data Table',
+              url: '/components/data-table',
+            },
+            {
+              title: 'Date Picker',
+              url: '/components/date-picker',
+            },
+            {
+              title: 'Dialog',
+              url: '/components/dialog',
+            },
+            {
+              title: 'Drawer',
+              url: '/components/drawer',
+            },
+            {
+              title: 'Dropdown Menu',
+              url: '/components/dropdown-menu',
+            },
+            {
+              title: 'Empty',
+              url: '/components/empty',
+            },
+            {
+              title: 'Field',
+              url: '/components/field',
+            },
+            {
+              title: 'Hover Card',
+              url: '/components/hover-card',
+            },
+            {
+              title: 'Input Group',
+              url: '/components/input-group',
+            },
+            {
+              title: 'Input OTP',
+              url: '/components/input-otp',
+            },
+            {
+              title: 'Input',
+              url: '/components/input',
+            },
           ],
         },
       ],

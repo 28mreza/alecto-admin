@@ -108,6 +108,37 @@ describe('AppSidebarComponent', () => {
     expect(text()).toContain('Bubble')
   })
 
+  it('renders the fourth batch of Base UI children', () => {
+    TestBed.inject(SidebarService).setOpen(true)
+    fixture.detectChanges()
+    for (const title of [
+      'Button',
+      'Button Group',
+      'Calendar',
+      'Card',
+      'Carousel',
+      'Chart',
+      'Checkbox',
+      'Collapsible',
+      'Combobox',
+      'Command',
+      'Context Menu',
+      'Data Table',
+      'Date Picker',
+      'Dialog',
+      'Drawer',
+      'Dropdown Menu',
+      'Empty',
+      'Field',
+      'Hover Card',
+      'Input Group',
+      'Input OTP',
+      'Input',
+    ]) {
+      expect(text()).toContain(title)
+    }
+  })
+
   it('renders the Chats badge', () => {
     expect(text()).toContain('3')
   })
