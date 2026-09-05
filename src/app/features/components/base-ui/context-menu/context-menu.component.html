@@ -1,0 +1,71 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Context Menu</h2>
+      <p class="text-muted-foreground">
+        A right-click menu with grouped actions.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Basic</h3>
+          <p hlmCardDescription>Right click the area below.</p>
+        </div>
+        <div hlmCardContent>
+          <div
+            [hlmContextMenuTrigger]="accountMenu"
+            class="border-border flex h-32 items-center justify-center rounded-md border border-dashed text-sm"
+          >
+            Right click here
+          </div>
+          <ng-template #accountMenu>
+            <div hlmDropdownMenu>
+              <div hlmDropdownMenuLabel>My Account</div>
+              <hr hlmDropdownMenuSeparator />
+              <button hlmDropdownMenuItem type="button">Profile</button>
+              <button hlmDropdownMenuItem type="button">Billing</button>
+              <button hlmDropdownMenuItem type="button">Settings</button>
+            </div>
+          </ng-template>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Danger Zone</h3>
+          <p hlmCardDescription>Menu with a destructive action.</p>
+        </div>
+        <div hlmCardContent>
+          <div
+            [hlmContextMenuTrigger]="dangerMenu"
+            class="border-destructive/50 flex h-32 items-center justify-center rounded-md border border-dashed text-sm"
+          >
+            Right click here carefully
+          </div>
+          <ng-template #dangerMenu>
+            <div hlmDropdownMenu>
+              <div hlmDropdownMenuLabel>Workspace</div>
+              <hr hlmDropdownMenuSeparator />
+              <button hlmDropdownMenuItem type="button">Rename</button>
+              <button hlmDropdownMenuItem type="button">Duplicate</button>
+              <hr hlmDropdownMenuSeparator />
+              <button hlmDropdownMenuItem variant="destructive" type="button">
+                Delete workspace
+              </button>
+            </div>
+          </ng-template>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>

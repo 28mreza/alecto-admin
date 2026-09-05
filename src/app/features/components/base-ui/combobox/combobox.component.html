@@ -1,0 +1,82 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Combobox</h2>
+      <p class="text-muted-foreground">
+        A filterable select with a popover list.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Basic</h3>
+          <p hlmCardDescription>Pick a framework, selection shown below.</p>
+        </div>
+        <div hlmCardContent class="grid gap-4">
+          <hlm-combobox [(value)]="selected">
+            <hlm-combobox-input placeholder="Select a framework" />
+            <hlm-combobox-content *hlmComboboxPortal>
+              <hlm-combobox-empty>No frameworks found.</hlm-combobox-empty>
+              <div hlmComboboxList>
+                @for (framework of frameworks; track framework.value) {
+                  <hlm-combobox-item [value]="framework.value">
+                    {{ framework.label }}
+                  </hlm-combobox-item>
+                }
+              </div>
+            </hlm-combobox-content>
+          </hlm-combobox>
+          <p class="text-muted-foreground text-sm">
+            Selected: {{ selected() || 'none' }}
+          </p>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Grouped</h3>
+          <p hlmCardDescription>Options grouped under labels.</p>
+        </div>
+        <div hlmCardContent class="grid gap-4">
+          <hlm-combobox [(value)]="groupedSelected">
+            <hlm-combobox-input placeholder="Select a library" />
+            <hlm-combobox-content *hlmComboboxPortal>
+              <hlm-combobox-empty>No libraries found.</hlm-combobox-empty>
+              <div hlmComboboxList>
+                <div hlmComboboxGroup>
+                  <span hlmComboboxLabel>Frameworks</span>
+                  @for (framework of frameworks; track framework.value) {
+                    <hlm-combobox-item [value]="framework.value">
+                      {{ framework.label }}
+                    </hlm-combobox-item>
+                  }
+                </div>
+                <div hlmComboboxSeparator></div>
+                <div hlmComboboxGroup>
+                  <span hlmComboboxLabel>Libraries</span>
+                  @for (library of libraries; track library.value) {
+                    <hlm-combobox-item [value]="library.value">
+                      {{ library.label }}
+                    </hlm-combobox-item>
+                  }
+                </div>
+              </div>
+            </hlm-combobox-content>
+          </hlm-combobox>
+          <p class="text-muted-foreground text-sm">
+            Selected: {{ groupedSelected() || 'none' }}
+          </p>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>

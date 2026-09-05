@@ -1,0 +1,95 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Drawer</h2>
+      <p class="text-muted-foreground">
+        A panel sliding in from the edge of the screen.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Bottom</h3>
+          <p hlmCardDescription>Edit-profile drawer from the bottom.</p>
+        </div>
+        <div hlmCardContent>
+          <hlm-drawer>
+            <button hlmDrawerTrigger hlmBtn variant="outline" type="button">
+              Open Drawer
+            </button>
+            <hlm-drawer-content *hlmDrawerPortal="let ctx">
+              <hlm-drawer-header>
+                <h3 hlmDrawerTitle>Edit Profile</h3>
+                <p hlmDrawerDescription>
+                  Make changes to your profile here. Click save when done.
+                </p>
+              </hlm-drawer-header>
+              <div class="grid gap-4 px-4">
+                <div class="grid gap-2">
+                  <label hlmLabel for="drawer-name">Name</label>
+                  <input hlmInput id="drawer-name" value="Muhamad Reza" />
+                </div>
+                <div class="grid gap-2">
+                  <label hlmLabel for="drawer-username">Username</label>
+                  <input hlmInput id="drawer-username" value="mrezadev" />
+                </div>
+              </div>
+              <hlm-drawer-footer>
+                <button hlmBtn type="button">Save Changes</button>
+                <button hlmDrawerClose hlmBtn variant="outline" type="button">
+                  Cancel
+                </button>
+              </hlm-drawer-footer>
+            </hlm-drawer-content>
+          </hlm-drawer>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Side</h3>
+          <p hlmCardDescription>Drawer sliding in from the right.</p>
+        </div>
+        <div hlmCardContent>
+          <hlm-drawer>
+            <button
+              hlmDrawerTrigger
+              direction="right"
+              hlmBtn
+              variant="outline"
+              type="button"
+            >
+              Open Right Drawer
+            </button>
+            <hlm-drawer-content *hlmDrawerPortal="let ctx">
+              <hlm-drawer-header>
+                <h3 hlmDrawerTitle>Notifications</h3>
+                <p hlmDrawerDescription>
+                  Your latest workspace activity.
+                </p>
+              </hlm-drawer-header>
+              <div class="grid gap-2 px-4 text-sm">
+                <p>Deploy finished in 2 minutes.</p>
+                <p>Reza mentioned you in a pull request.</p>
+              </div>
+              <hlm-drawer-footer>
+                <button hlmDrawerClose hlmBtn variant="outline" type="button">
+                  Close
+                </button>
+              </hlm-drawer-footer>
+            </hlm-drawer-content>
+          </hlm-drawer>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>

@@ -1,0 +1,98 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Carousel</h2>
+      <p class="text-muted-foreground">
+        A slideshow of cards with previous/next controls.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Basic</h3>
+          <p hlmCardDescription>One slide at a time.</p>
+        </div>
+        <div hlmCardContent class="grid justify-items-center">
+          <hlm-carousel class="w-full max-w-xs">
+            <hlm-carousel-content>
+              @for (item of items; track item) {
+                <hlm-carousel-item>
+                  <section hlmCard>
+                    <div hlmCardContent class="flex aspect-square items-center justify-center p-6">
+                      <span class="text-3xl font-semibold">Slide {{ item }}</span>
+                    </div>
+                  </section>
+                </hlm-carousel-item>
+              }
+            </hlm-carousel-content>
+            <!-- eslint-disable-next-line @angular-eslint/template/elements-content -- buttons render their own icon + sr-only text -->
+            <button hlm-carousel-previous type="button"></button>
+            <!-- eslint-disable-next-line @angular-eslint/template/elements-content -- buttons render their own icon + sr-only text -->
+            <button hlm-carousel-next type="button"></button>
+          </hlm-carousel>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Multiple</h3>
+          <p hlmCardDescription>Two slides visible on medium screens.</p>
+        </div>
+        <div hlmCardContent class="grid justify-items-center">
+          <hlm-carousel class="w-full max-w-xs">
+            <hlm-carousel-content>
+              @for (item of items; track item) {
+                <hlm-carousel-item class="md:basis-1/2">
+                  <section hlmCard>
+                    <div hlmCardContent class="flex aspect-square items-center justify-center p-6">
+                      <span class="text-3xl font-semibold">Slide {{ item }}</span>
+                    </div>
+                  </section>
+                </hlm-carousel-item>
+              }
+            </hlm-carousel-content>
+            <!-- eslint-disable-next-line @angular-eslint/template/elements-content -- buttons render their own icon + sr-only text -->
+            <button hlm-carousel-previous type="button"></button>
+            <!-- eslint-disable-next-line @angular-eslint/template/elements-content -- buttons render their own icon + sr-only text -->
+            <button hlm-carousel-next type="button"></button>
+          </hlm-carousel>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Vertical</h3>
+          <p hlmCardDescription>Vertical orientation.</p>
+        </div>
+        <div hlmCardContent class="grid justify-items-center">
+          <hlm-carousel orientation="vertical" class="w-full max-w-xs">
+            <hlm-carousel-content class="-mt-1 h-[270px]">
+              @for (item of items; track item) {
+                <hlm-carousel-item class="pt-1">
+                  <section hlmCard>
+                    <div hlmCardContent class="flex items-center justify-center p-6">
+                      <span class="text-3xl font-semibold">Slide {{ item }}</span>
+                    </div>
+                  </section>
+                </hlm-carousel-item>
+              }
+            </hlm-carousel-content>
+            <!-- eslint-disable-next-line @angular-eslint/template/elements-content -- buttons render their own icon + sr-only text -->
+            <button hlm-carousel-previous type="button"></button>
+            <!-- eslint-disable-next-line @angular-eslint/template/elements-content -- buttons render their own icon + sr-only text -->
+            <button hlm-carousel-next type="button"></button>
+          </hlm-carousel>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>

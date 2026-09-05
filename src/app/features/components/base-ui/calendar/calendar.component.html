@@ -1,0 +1,46 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Calendar</h2>
+      <p class="text-muted-foreground">
+        A date picker calendar bound to a signal.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Basic</h3>
+          <p hlmCardDescription>Selected date shown below.</p>
+        </div>
+        <div hlmCardContent class="grid justify-items-center gap-4">
+          <hlm-calendar [(date)]="selected" />
+          <p class="text-muted-foreground text-sm">
+            Selected: {{ selected() | date: 'fullDate' }}
+          </p>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Dropdown Pickers</h3>
+          <p hlmCardDescription>Month and year dropdown navigation.</p>
+        </div>
+        <div hlmCardContent class="grid justify-items-center gap-4">
+          <hlm-calendar [(date)]="dropdownSelected" captionLayout="dropdown" />
+          <p class="text-muted-foreground text-sm">
+            Selected: {{ dropdownSelected() | date: 'MMMM y' }}
+          </p>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>

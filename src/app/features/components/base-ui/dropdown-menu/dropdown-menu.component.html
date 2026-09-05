@@ -1,0 +1,65 @@
+<app-header [fixed]="true">
+  <app-search className="me-auto" />
+  <app-refresh-button />
+  <app-theme-switch />
+  <app-config-drawer />
+  <app-profile-dropdown />
+</app-header>
+
+<app-main>
+  <div class="flex flex-1 flex-col gap-4 sm:gap-6">
+    <div>
+      <h2 class="text-2xl font-bold tracking-tight">Dropdown Menu</h2>
+      <p class="text-muted-foreground">
+        A menu of actions opened from a trigger button.
+      </p>
+    </div>
+
+    <div class="grid items-start gap-4 lg:grid-cols-2">
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Basic</h3>
+          <p hlmCardDescription>Account menu with a label and separator.</p>
+        </div>
+        <div hlmCardContent>
+          <button hlmBtn variant="outline" type="button" hlmDropdownMenuTrigger [hlmDropdownMenuTrigger]="accountMenu">
+            Open menu
+          </button>
+          <ng-template #accountMenu>
+            <div hlmDropdownMenu>
+              <div hlmDropdownMenuLabel>My Account</div>
+              <hr hlmDropdownMenuSeparator />
+              <button hlmDropdownMenuItem type="button">Profile</button>
+              <button hlmDropdownMenuItem type="button">Billing</button>
+              <button hlmDropdownMenuItem type="button">Settings</button>
+            </div>
+          </ng-template>
+        </div>
+      </section>
+
+      <section hlmCard>
+        <div hlmCardHeader>
+          <h3 hlmCardTitle>Disabled &amp; Destructive</h3>
+          <p hlmCardDescription>Disabled item plus a danger action.</p>
+        </div>
+        <div hlmCardContent>
+          <button hlmBtn variant="outline" type="button" hlmDropdownMenuTrigger [hlmDropdownMenuTrigger]="dangerMenu">
+            Actions
+          </button>
+          <ng-template #dangerMenu>
+            <div hlmDropdownMenu>
+              <div hlmDropdownMenuLabel>Workspace</div>
+              <hr hlmDropdownMenuSeparator />
+              <button hlmDropdownMenuItem type="button">Rename</button>
+              <button hlmDropdownMenuItem type="button" disabled>Archive</button>
+              <hr hlmDropdownMenuSeparator />
+              <button hlmDropdownMenuItem variant="destructive" type="button">
+                Delete workspace
+              </button>
+            </div>
+          </ng-template>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-main>
