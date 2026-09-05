@@ -86,7 +86,9 @@
       "@spartan-ng/helm/progress": ["./src/app/ui/progress/src/index.ts"],
       "@spartan-ng/helm/questionnaire": [
         "./src/app/ui/questionnaire/src/index.ts"
-      ]
+      ],
+      "@spartan-ng/helm/resizable": ["./src/app/ui/resizable/src/index.ts"],
+      "@spartan-ng/helm/sidebar": ["./src/app/ui/sidebar/src/index.ts"]
     }
   },
   "angularCompilerOptions": {
