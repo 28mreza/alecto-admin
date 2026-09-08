@@ -35,9 +35,9 @@ import { UserAuthFormComponent } from '../sign-in/user-auth-form.component'
           <div class="flex flex-col space-y-2 text-start">
             <h2 class="text-lg font-semibold tracking-tight">Sign in</h2>
             <p class="text-muted-foreground text-sm">
-              Enter your email and password below to log into
+              Enter your email and password below to log into your account.
               <br class="max-sm:hidden" />
-              your account. Don't have an account?
+              Don't have an account?
               <a
                 routerLink="/sign-up"
                 class="hover:text-primary text-nowrap underline underline-offset-4"

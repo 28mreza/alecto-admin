@@ -19,9 +19,9 @@ import { UserAuthFormComponent } from './user-auth-form.component'
       <div hlmCardHeader>
         <h2 hlmCardTitle class="text-lg tracking-tight">Sign in</h2>
         <p hlmCardDescription>
-          Enter your email and password below to log into
+          Enter your email and password below to log into your account.
           <br class="max-sm:hidden" />
-          your account. Don't have an account?
+          Don't have an account?
           <a
             routerLink="/sign-up"
             class="hover:text-primary text-nowrap underline underline-offset-4"
