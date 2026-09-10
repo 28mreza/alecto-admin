@@ -53,7 +53,7 @@ describe('AppearanceFormComponent', () => {
       (o) => o.textContent?.trim()
     )
     expect(options).toEqual(
-      expect.arrayContaining(['jetbrains-mono', 'inter', 'system'])
+      expect.arrayContaining(['jetbrains-mono', 'inter', 'shantell-sans', 'system'])
     )
     expect(host().textContent).toContain('Light')
     expect(host().textContent).toContain('Dark')

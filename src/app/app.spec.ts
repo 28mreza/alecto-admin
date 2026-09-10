@@ -25,6 +25,7 @@ describe('App', () => {
       'dark',
       'font-jetbrains-mono',
       'font-inter',
+      'font-shantell-sans',
       'font-system'
     )
     await TestBed.configureTestingModule({
@@ -55,7 +56,7 @@ describe('App', () => {
     // on every page — not only where a consumer injects the services.
     expect(document.documentElement.classList.contains('light')).toBe(true)
     expect(
-      document.documentElement.classList.contains('font-jetbrains-mono')
+      document.documentElement.classList.contains('font-shantell-sans')
     ).toBe(true)
   })
 
