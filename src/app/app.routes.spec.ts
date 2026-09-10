@@ -164,6 +164,7 @@ describe('app routes — navigation audit', () => {
       '/sign-up',
       '/forgot-password',
       '/otp',
+      '/registration',
       '/401',
       '/403',
       '/404',

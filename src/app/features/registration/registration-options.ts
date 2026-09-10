@@ -1,0 +1,221 @@
+export interface Option { value: string; label: string }
+export interface Country { code: string; name: string; dialCode: string; flag: string }
+
+/** Pads a base list with generated mock entries up to `total` items. */
+function padWithMocks(base: Option[], valuePrefix: string, labelPrefix: string, total = 50): Option[] {
+  const out = [...base]
+  let n = 1
+  while (out.length < total) {
+    const value = `${valuePrefix}_${n}`
+    if (!out.some((o) => o.value === value)) {
+      out.push({ value, label: `${labelPrefix} ${n}` })
+    }
+    n++
+  }
+  return out
+}
+
+export const VENDOR_TYPES: Option[] = [
+  { value: 'ID_COMPANY', label: 'Indonesian Company' },
+  { value: 'OVERSEAS_COMPANY', label: 'Non-Indonesian Company' },
+  { value: 'GOVERNMENT', label: 'Government' },
+]
+
+const PROFILE_TYPE_BASE: Option[] = [
+  { value: 'CORPORATE', label: 'Corporate' },
+  { value: 'INDIVIDUAL', label: 'Individual' },
+  { value: 'SOLE_PROPRIETORSHIP', label: 'Sole Proprietorship' },
+  { value: 'PARTNERSHIP', label: 'Partnership' },
+  { value: 'LIMITED_PARTNERSHIP', label: 'Limited Partnership' },
+  { value: 'GENERAL_PARTNERSHIP', label: 'General Partnership' },
+  { value: 'COOPERATIVE', label: 'Cooperative' },
+  { value: 'FOUNDATION', label: 'Foundation' },
+  { value: 'ASSOCIATION', label: 'Association' },
+  { value: 'JOINT_VENTURE', label: 'Joint Venture' },
+  { value: 'HOLDING_COMPANY', label: 'Holding Company' },
+  { value: 'SUBSIDIARY', label: 'Subsidiary' },
+  { value: 'BRANCH_OFFICE', label: 'Branch Office' },
+  { value: 'REPRESENTATIVE_OFFICE', label: 'Representative Office' },
+  { value: 'STATE_OWNED', label: 'State-Owned Enterprise' },
+  { value: 'REGIONAL_OWNED', label: 'Regional-Owned Enterprise' },
+  { value: 'PUBLIC_COMPANY', label: 'Public Company' },
+  { value: 'PRIVATE_COMPANY', label: 'Private Company' },
+  { value: 'FOREIGN_COMPANY', label: 'Foreign Company' },
+  { value: 'NON_PROFIT', label: 'Non-Profit Organization' },
+  { value: 'TRUST', label: 'Trust' },
+  { value: 'CONSORTIUM', label: 'Consortium' },
+  { value: 'FRANCHISE', label: 'Franchise' },
+  { value: 'STARTUP', label: 'Startup' },
+  { value: 'MSME_MICRO', label: 'MSME Micro' },
+  { value: 'MSME_SMALL', label: 'MSME Small' },
+  { value: 'MSME_MEDIUM', label: 'MSME Medium' },
+]
+export const PROFILE_TYPES: Option[] = padWithMocks(PROFILE_TYPE_BASE, 'MOCK_PROFILE_TYPE', 'Mock Profile Type')
+
+export const DATA_CATEGORIES: Option[] = [
+  { value: 'MANUFACTURING', label: 'Manufacturing' },
+  { value: 'HOSPITAL', label: 'Hospital' },
+  { value: 'DISTRIBUTOR', label: 'Distributor' },
+  { value: 'CONTRACTOR', label: 'Contractor' },
+  { value: 'SUPPLIER', label: 'Supplier' },
+  { value: 'OTHER', label: 'Other' },
+  { value: 'AGRICULTURE', label: 'Agriculture' },
+  { value: 'AUTOMOTIVE', label: 'Automotive' },
+  { value: 'AVIATION', label: 'Aviation' },
+  { value: 'BANKING', label: 'Banking' },
+  { value: 'BIOTECH', label: 'Biotechnology' },
+  { value: 'CHEMICAL', label: 'Chemical' },
+  { value: 'CONSTRUCTION', label: 'Construction' },
+  { value: 'CONSULTING', label: 'Consulting' },
+  { value: 'COSMETICS', label: 'Cosmetics' },
+  { value: 'EDUCATION', label: 'Education' },
+  { value: 'ELECTRONICS', label: 'Electronics' },
+  { value: 'ENERGY', label: 'Energy' },
+  { value: 'ENGINEERING', label: 'Engineering' },
+  { value: 'FASHION', label: 'Fashion' },
+  { value: 'FINANCE', label: 'Finance' },
+  { value: 'FISHERIES', label: 'Fisheries' },
+  { value: 'FOOD_BEVERAGE', label: 'Food & Beverage' },
+  { value: 'FORESTRY', label: 'Forestry' },
+  { value: 'FURNITURE', label: 'Furniture' },
+  { value: 'HEALTHCARE', label: 'Healthcare' },
+  { value: 'HOSPITALITY', label: 'Hospitality' },
+  { value: 'INSURANCE', label: 'Insurance' },
+  { value: 'IT_SERVICES', label: 'IT Services' },
+  { value: 'LEGAL', label: 'Legal' },
+  { value: 'LOGISTICS', label: 'Logistics' },
+  { value: 'MARINE', label: 'Marine' },
+  { value: 'MEDIA', label: 'Media' },
+  { value: 'MINING', label: 'Mining' },
+  { value: 'OIL_GAS', label: 'Oil & Gas' },
+  { value: 'PHARMACEUTICAL', label: 'Pharmaceutical' },
+  { value: 'PLANTATION', label: 'Plantation' },
+  { value: 'PRINTING', label: 'Printing' },
+  { value: 'REAL_ESTATE', label: 'Real Estate' },
+  { value: 'RETAIL', label: 'Retail' },
+  { value: 'SECURITY', label: 'Security' },
+  { value: 'SHIPPING', label: 'Shipping' },
+  { value: 'SOFTWARE', label: 'Software' },
+  { value: 'STEEL', label: 'Steel' },
+  { value: 'TELECOM', label: 'Telecommunication' },
+  { value: 'TEXTILE', label: 'Textile' },
+  { value: 'TOURISM', label: 'Tourism' },
+  { value: 'TRANSPORTATION', label: 'Transportation' },
+  { value: 'UTILITIES', label: 'Utilities' },
+  { value: 'WHOLESALE', label: 'Wholesale' },
+]
+
+const BANK_BASE: Option[] = [
+  { value: 'BCA', label: 'Bank Central Asia (BCA)' },
+  { value: 'BNI', label: 'Bank Negara Indonesia (BNI)' },
+  { value: 'BRI', label: 'Bank Rakyat Indonesia (BRI)' },
+  { value: 'MANDIRI', label: 'Bank Mandiri' },
+  { value: 'BTN', label: 'Bank Tabungan Negara (BTN)' },
+  { value: 'BSI', label: 'Bank Syariah Indonesia (BSI)' },
+  { value: 'CIMB', label: 'CIMB Niaga' },
+  { value: 'DANAMON', label: 'Bank Danamon' },
+  { value: 'PERMATA', label: 'Bank Permata' },
+  { value: 'MAYBANK', label: 'Maybank Indonesia' },
+  { value: 'OCBC', label: 'OCBC Indonesia' },
+  { value: 'PANIN', label: 'Bank Panin' },
+  { value: 'MEGA', label: 'Bank Mega' },
+  { value: 'UOB', label: 'UOB Indonesia' },
+  { value: 'DBS', label: 'DBS Indonesia' },
+  { value: 'HSBC', label: 'HSBC Indonesia' },
+  { value: 'CITIBANK', label: 'Citibank Indonesia' },
+  { value: 'STANDARD_CHARTERED', label: 'Standard Chartered Indonesia' },
+  { value: 'MUFG', label: 'MUFG Bank' },
+  { value: 'WOORI', label: 'Woori Bank' },
+  { value: 'MIZUHO', label: 'Mizuho Bank' },
+  { value: 'SMBC', label: 'SMBC Indonesia' },
+  { value: 'ANZ', label: 'ANZ Indonesia' },
+  { value: 'COMMONWEALTH', label: 'Commonwealth Bank' },
+  { value: 'BJB', label: 'Bank BJB' },
+]
+export const BANKS: Option[] = padWithMocks(BANK_BASE, 'MOCK_BANK', 'Mock Bank')
+
+export const CURRENCIES: Option[] = [
+  { value: 'IDR', label: 'IDR — Indonesian Rupiah' },
+  { value: 'USD', label: 'USD — US Dollar' },
+  { value: 'EUR', label: 'EUR — Euro' },
+  { value: 'JPY', label: 'JPY — Japanese Yen' },
+  { value: 'GBP', label: 'GBP — British Pound' },
+  { value: 'AUD', label: 'AUD — Australian Dollar' },
+  { value: 'CAD', label: 'CAD — Canadian Dollar' },
+  { value: 'CHF', label: 'CHF — Swiss Franc' },
+  { value: 'CNY', label: 'CNY — Chinese Yuan' },
+  { value: 'SEK', label: 'SEK — Swedish Krona' },
+  { value: 'NZD', label: 'NZD — New Zealand Dollar' },
+  { value: 'MXN', label: 'MXN — Mexican Peso' },
+  { value: 'SGD', label: 'SGD — Singapore Dollar' },
+  { value: 'HKD', label: 'HKD — Hong Kong Dollar' },
+  { value: 'NOK', label: 'NOK — Norwegian Krone' },
+  { value: 'KRW', label: 'KRW — South Korean Won' },
+  { value: 'TRY', label: 'TRY — Turkish Lira' },
+  { value: 'INR', label: 'INR — Indian Rupee' },
+  { value: 'BRL', label: 'BRL — Brazilian Real' },
+  { value: 'ZAR', label: 'ZAR — South African Rand' },
+  { value: 'SAR', label: 'SAR — Saudi Riyal' },
+  { value: 'AED', label: 'AED — UAE Dirham' },
+  { value: 'THB', label: 'THB — Thai Baht' },
+  { value: 'MYR', label: 'MYR — Malaysian Ringgit' },
+  { value: 'PHP', label: 'PHP — Philippine Peso' },
+  { value: 'VND', label: 'VND — Vietnamese Dong' },
+  { value: 'TWD', label: 'TWD — Taiwan Dollar' },
+  { value: 'PLN', label: 'PLN — Polish Zloty' },
+  { value: 'DKK', label: 'DKK — Danish Krone' },
+  { value: 'CZK', label: 'CZK — Czech Koruna' },
+  { value: 'HUF', label: 'HUF — Hungarian Forint' },
+  { value: 'ILS', label: 'ILS — Israeli Shekel' },
+  { value: 'QAR', label: 'QAR — Qatari Riyal' },
+  { value: 'KWD', label: 'KWD — Kuwaiti Dinar' },
+  { value: 'BHD', label: 'BHD — Bahraini Dinar' },
+  { value: 'OMR', label: 'OMR — Omani Rial' },
+  { value: 'JOD', label: 'JOD — Jordanian Dinar' },
+  { value: 'EGP', label: 'EGP — Egyptian Pound' },
+  { value: 'NGN', label: 'NGN — Nigerian Naira' },
+  { value: 'KES', label: 'KES — Kenyan Shilling' },
+  { value: 'PKR', label: 'PKR — Pakistani Rupee' },
+  { value: 'BDT', label: 'BDT — Bangladeshi Taka' },
+  { value: 'LKR', label: 'LKR — Sri Lankan Rupee' },
+  { value: 'MMK', label: 'MMK — Myanmar Kyat' },
+  { value: 'KHR', label: 'KHR — Cambodian Riel' },
+  { value: 'CLP', label: 'CLP — Chilean Peso' },
+  { value: 'COP', label: 'COP — Colombian Peso' },
+  { value: 'PEN', label: 'PEN — Peruvian Sol' },
+  { value: 'ARS', label: 'ARS — Argentine Peso' },
+  { value: 'MOP', label: 'MOP — Macanese Pataca' },
+]
+
+const RECIPIENT_TYPE_BASE: Option[] = [
+  { value: 'CORPORATE', label: 'Corporate' },
+  { value: 'INDIVIDUAL', label: 'Individual' },
+  { value: 'GOVERNMENT', label: 'Government' },
+]
+export const RECIPIENT_TYPES: Option[] = padWithMocks(RECIPIENT_TYPE_BASE, 'MOCK_RECIPIENT', 'Mock Recipient Type')
+
+export const COUNTRIES: Country[] = [
+  { code: 'ID', name: 'Indonesia', dialCode: '+62', flag: '🇮🇩' },
+  { code: 'SG', name: 'Singapore', dialCode: '+65', flag: '🇸🇬' },
+  { code: 'MY', name: 'Malaysia', dialCode: '+60', flag: '🇲🇾' },
+  { code: 'US', name: 'United States', dialCode: '+1', flag: '🇺🇸' },
+  { code: 'TH', name: 'Thailand', dialCode: '+66', flag: '🇹🇭' },
+  { code: 'PH', name: 'Philippines', dialCode: '+63', flag: '🇵🇭' },
+  { code: 'VN', name: 'Vietnam', dialCode: '+84', flag: '🇻🇳' },
+  { code: 'JP', name: 'Japan', dialCode: '+81', flag: '🇯🇵' },
+  { code: 'CN', name: 'China', dialCode: '+86', flag: '🇨🇳' },
+  { code: 'KR', name: 'South Korea', dialCode: '+82', flag: '🇰🇷' },
+  { code: 'IN', name: 'India', dialCode: '+91', flag: '🇮🇳' },
+  { code: 'AU', name: 'Australia', dialCode: '+61', flag: '🇦🇺' },
+  { code: 'GB', name: 'United Kingdom', dialCode: '+44', flag: '🇬🇧' },
+  { code: 'DE', name: 'Germany', dialCode: '+49', flag: '🇩🇪' },
+  { code: 'NL', name: 'Netherlands', dialCode: '+31', flag: '🇳🇱' },
+  { code: 'FR', name: 'France', dialCode: '+33', flag: '🇫🇷' },
+  { code: 'AE', name: 'United Arab Emirates', dialCode: '+971', flag: '🇦🇪' },
+  { code: 'SA', name: 'Saudi Arabia', dialCode: '+966', flag: '🇸🇦' },
+  { code: 'HK', name: 'Hong Kong', dialCode: '+852', flag: '🇭🇰' },
+  { code: 'TW', name: 'Taiwan', dialCode: '+886', flag: '🇹🇼' },
+]
+export const DEFAULT_COUNTRY_DIAL = '+62'
+export const MAX_UPLOAD_BYTES = 5 * 1024 * 1024
+export const ALLOWED_UPLOAD_EXTS = ['jpg', 'jpeg', 'png', 'pdf']

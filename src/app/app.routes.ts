@@ -497,6 +497,13 @@ export const routes: Routes = [
         (m) => m.MaintenanceErrorComponent
       ),
   },
+  {
+    path: 'registration',
+    loadComponent: () =>
+      import('./features/registration/registration.component').then(
+        (m) => m.RegistrationComponent
+      ),
+  },
   // Unknown paths show the 404 page (source-faithful).
   {
     path: '**',
