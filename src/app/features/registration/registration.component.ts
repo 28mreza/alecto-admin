@@ -171,7 +171,7 @@ interface TaxIdentificationControls {
         <div class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
           <section hlmCard formGroupName="vendorProfile">
             <div hlmCardHeader>
-              <h2 hlmCardTitle>Vendor Profile</h2>
+              <h2 hlmCardTitle class="text-center text-2xl">Vendor Profile</h2>
             </div>
             <div hlmCardContent class="grid gap-3">
               <div class="grid gap-2">
@@ -288,7 +288,7 @@ interface TaxIdentificationControls {
 
           <section hlmCard formGroupName="bankAccount">
             <div hlmCardHeader>
-              <h2 hlmCardTitle>Bank Account</h2>
+              <h2 hlmCardTitle class="text-center text-2xl">Bank Account</h2>
             </div>
             <div hlmCardContent class="grid gap-3">
               <div class="grid gap-2">
@@ -356,7 +356,7 @@ interface TaxIdentificationControls {
 
           <section hlmCard formGroupName="taxIdentification">
             <div hlmCardHeader>
-              <h2 hlmCardTitle>Tax Identification</h2>
+              <h2 hlmCardTitle class="text-center text-2xl">Tax Identification</h2>
             </div>
             <div hlmCardContent class="grid gap-3">
               <div class="grid gap-2">
