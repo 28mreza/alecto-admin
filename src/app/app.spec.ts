@@ -25,6 +25,7 @@ describe('App', () => {
       'dark',
       'font-jetbrains-mono',
       'font-inter',
+      'font-plus-jakarta-sans',
       'font-shantell-sans',
       'font-system'
     )
@@ -56,7 +57,7 @@ describe('App', () => {
     // on every page — not only where a consumer injects the services.
     expect(document.documentElement.classList.contains('light')).toBe(true)
     expect(
-      document.documentElement.classList.contains('font-shantell-sans')
+      document.documentElement.classList.contains('font-plus-jakarta-sans')
     ).toBe(true)
   })
 

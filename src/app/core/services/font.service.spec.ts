@@ -7,14 +7,15 @@ describe('FontService', () => {
     document.documentElement.classList.remove(
       'font-jetbrains-mono',
       'font-inter',
+      'font-plus-jakarta-sans',
       'font-shantell-sans',
       'font-system'
     )
   })
 
-  it('defaults to shantell-sans', () => {
+  it('defaults to plus-jakarta-sans', () => {
     const service = TestBed.inject(FontService)
-    expect(service.font()).toBe('shantell-sans')
+    expect(service.font()).toBe('plus-jakarta-sans')
   })
 
   it('setFont applies font class to html element', () => {
@@ -31,9 +32,9 @@ describe('FontService', () => {
     const service = TestBed.inject(FontService)
     service.setFont('inter')
     service.resetFont()
-    expect(service.font()).toBe('shantell-sans')
+    expect(service.font()).toBe('plus-jakarta-sans')
     expect(
-      document.documentElement.classList.contains('font-shantell-sans')
+      document.documentElement.classList.contains('font-plus-jakarta-sans')
     ).toBe(true)
     expect(document.documentElement.classList.contains('font-inter')).toBe(
       false
@@ -61,6 +62,6 @@ describe('FontService', () => {
       '"times-new-roman"'
     )
     const service = TestBed.inject(FontService)
-    expect(service.font()).toBe('shantell-sans')
+    expect(service.font()).toBe('plus-jakarta-sans')
   })
 })

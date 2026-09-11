@@ -6,7 +6,7 @@ const FONT_KEY = 'font'
 
 @Injectable({ providedIn: 'root' })
 export class FontService {
-  readonly defaultFont: Font = 'shantell-sans'
+  readonly defaultFont: Font = 'plus-jakarta-sans'
   readonly font = signal<Font>(this.defaultFont)
 
   private readonly storage = inject(StorageService)

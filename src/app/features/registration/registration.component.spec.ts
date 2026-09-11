@@ -4,12 +4,11 @@ import { vi } from 'vitest'
 import { ToastService } from '../../core/services/toast.service'
 import { RegistrationComponent } from './registration.component'
 
-vi.mock('../../shared/utils/sleep', () => ({ sleep: () => Promise.resolve(undefined) }))
-
 function stubToast(): { promise: ReturnType<typeof vi.fn> } {
   return {
     promise: vi.fn((promise: Promise<unknown>, messages: { success: string | ((v: unknown) => string) }) => {
-      void Promise.resolve(promise).then(() => {
+      void promise
+      void Promise.resolve().then(() => {
         if (typeof messages.success === 'function') messages.success(undefined)
       })
     }),
@@ -18,6 +17,16 @@ function stubToast(): { promise: ReturnType<typeof vi.fn> } {
 
 function makeFile(name = 'doc.pdf'): File {
   return new File(['x'], name, { type: 'application/pdf' })
+}
+
+interface Exposed {
+  onSubmit: () => void
+  confirmReset: () => void
+  isLoading: () => boolean
+}
+
+function api(c: RegistrationComponent): Exposed {
+  return c as unknown as Exposed
 }
 
 async function setup() {
@@ -77,7 +86,7 @@ describe('RegistrationComponent', () => {
     fillValid(c)
     expect(c.form.valid).toBe(true)
     const log = vi.spyOn(console, 'log').mockReturnValue(undefined)
-    c.onSubmit()
+    api(c).onSubmit()
     const payload = log.mock.calls[0][1] as {
       vendorProfile: { name: string; address: string }
       bankAccount: { bankDocument: { name: string; size: number; type: string } }
@@ -109,7 +118,7 @@ describe('RegistrationComponent', () => {
     const tax = c.taxIdentification.controls
     tax.useVendorNameAsNpwpName.setValue(true)
     expect(tax.npwpName.disabled).toBe(true)
-    c.confirmReset()
+    api(c).confirmReset()
     expect(tax.useVendorNameAsNpwpName.value).toBe(false)
     expect(tax.npwpName.enabled).toBe(true)
   })
@@ -117,9 +126,9 @@ describe('RegistrationComponent', () => {
     const f = await setup()
     const c = f.componentInstance
     fillValid(c)
-    c.onSubmit()
-    expect(c.isLoading()).toBe(true)
-    await vi.waitFor(() => expect(c.isLoading()).toBe(false))
+    api(c).onSubmit()
+    expect(api(c).isLoading()).toBe(true)
+    await vi.waitFor(() => expect(api(c).isLoading()).toBe(false))
     expect(c.canSubmit()).toBe(true)
   })
   it('preserves input when switching tabs', async () => {
